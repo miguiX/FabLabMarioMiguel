@@ -22,43 +22,144 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentanaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaMáquinaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeMáquinasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrganizarVentanasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinimizarTodasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ComboBox1
+        'MenuStrip1
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(213, 11)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(92, 21)
-        Me.ComboBox1.TabIndex = 0
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.MaquinasToolStripMenuItem, Me.InformesToolStripMenuItem, Me.VentanaToolStripMenuItem, Me.AyudaToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1043, 28)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'DataGridView1
+        'UsuariosToolStripMenuItem
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(136, 78)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
-        Me.DataGridView1.TabIndex = 1
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoUsuarioToolStripMenuItem, Me.GestionDeUsuariosToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(77, 24)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'MaquinasToolStripMenuItem
+        '
+        Me.MaquinasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaMáquinaToolStripMenuItem, Me.GestiónDeMáquinasToolStripMenuItem})
+        Me.MaquinasToolStripMenuItem.Name = "MaquinasToolStripMenuItem"
+        Me.MaquinasToolStripMenuItem.Size = New System.Drawing.Size(85, 24)
+        Me.MaquinasToolStripMenuItem.Text = "Maquinas"
+        '
+        'InformesToolStripMenuItem
+        '
+        Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(79, 24)
+        Me.InformesToolStripMenuItem.Text = "Informes"
+        '
+        'VentanaToolStripMenuItem
+        '
+        Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem, Me.ToolStripSeparator1})
+        Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
+        Me.VentanaToolStripMenuItem.Text = "Ventana"
+        '
+        'AyudaToolStripMenuItem
+        '
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem})
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
+        Me.AyudaToolStripMenuItem.Text = "Ayuda"
+        '
+        'NuevoUsuarioToolStripMenuItem
+        '
+        Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
+        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(213, 26)
+        Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
+        '
+        'GestionDeUsuariosToolStripMenuItem
+        '
+        Me.GestionDeUsuariosToolStripMenuItem.Name = "GestionDeUsuariosToolStripMenuItem"
+        Me.GestionDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(213, 26)
+        Me.GestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios"
+        '
+        'NuevaMáquinaToolStripMenuItem
+        '
+        Me.NuevaMáquinaToolStripMenuItem.Name = "NuevaMáquinaToolStripMenuItem"
+        Me.NuevaMáquinaToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.NuevaMáquinaToolStripMenuItem.Text = "Nueva máquina"
+        '
+        'GestiónDeMáquinasToolStripMenuItem
+        '
+        Me.GestiónDeMáquinasToolStripMenuItem.Name = "GestiónDeMáquinasToolStripMenuItem"
+        Me.GestiónDeMáquinasToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.GestiónDeMáquinasToolStripMenuItem.Text = "Gestión de máquinas"
+        '
+        'OrganizarVentanasToolStripMenuItem
+        '
+        Me.OrganizarVentanasToolStripMenuItem.Name = "OrganizarVentanasToolStripMenuItem"
+        Me.OrganizarVentanasToolStripMenuItem.Size = New System.Drawing.Size(211, 26)
+        Me.OrganizarVentanasToolStripMenuItem.Text = "Organizar ventanas"
+        '
+        'MinimizarTodasToolStripMenuItem
+        '
+        Me.MinimizarTodasToolStripMenuItem.Name = "MinimizarTodasToolStripMenuItem"
+        Me.MinimizarTodasToolStripMenuItem.Size = New System.Drawing.Size(211, 26)
+        Me.MinimizarTodasToolStripMenuItem.Text = "Minimizar todas"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(208, 6)
+        '
+        'AcercaDeToolStripMenuItem
+        '
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(511, 276)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ClientSize = New System.Drawing.Size(1043, 469)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.IsMdiContainer = True
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.Text = "Form1"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NuevoUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionDeUsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MaquinasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NuevaMáquinaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestiónDeMáquinasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InformesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentanaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OrganizarVentanasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MinimizarTodasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
 End Class
