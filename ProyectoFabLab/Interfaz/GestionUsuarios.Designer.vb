@@ -24,12 +24,12 @@ Partial Class GestionUsuarios
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'Form1
+        'GestionUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(938, 463)
-        Me.Name = "Form1"
+        Me.ClientSize = New System.Drawing.Size(957, 449)
+        Me.Name = "GestionUsuarios"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 

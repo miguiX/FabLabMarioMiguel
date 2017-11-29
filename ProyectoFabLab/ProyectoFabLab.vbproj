@@ -108,6 +108,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Interfaz\GestionMaquinas.resx">
+      <DependentUpon>GestionMaquinas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.vb</DependentUpon>
     </EmbeddedResource>

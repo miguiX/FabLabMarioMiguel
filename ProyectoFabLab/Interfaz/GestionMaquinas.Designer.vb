@@ -22,8 +22,16 @@ Partial Class GestionMaquinas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'GestionMaquinas
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(961, 453)
+        Me.Name = "GestionMaquinas"
         Me.Text = "Form1"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class
