@@ -53,6 +53,8 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+
+        Public Property cadenaConexion As String
     End Class
 End Namespace
 

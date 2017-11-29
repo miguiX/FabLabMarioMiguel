@@ -72,6 +72,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\GatewayMaquinas.vb" />
+    <Compile Include="Datos\GatewayUsuarios.vb" />
     <Compile Include="Interfaz\GestionMaquinas.Designer.vb">
       <DependentUpon>GestionMaquinas.vb</DependentUpon>
     </Compile>
@@ -137,7 +139,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datos\" />
     <Folder Include="Negocios\" />
     <Folder Include="Recursos\" />
   </ItemGroup>
