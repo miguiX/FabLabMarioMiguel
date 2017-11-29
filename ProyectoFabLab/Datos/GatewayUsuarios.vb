@@ -21,5 +21,8 @@ Public Class GatewayUsuaios
         If apellidos = "" Or apellidos Is Nothing Then
             Throw New ArgumentException("Los apellidos no puede estar vacío")
         End If
+        If fecha_nacimiento = "" Then
+            Throw New ArgumentException("La fecha_nacimiento no puede estar vacía")
+        End If
     End Function
 End Class
