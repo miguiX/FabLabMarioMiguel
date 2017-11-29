@@ -72,11 +72,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaz\Form1.vb">
+    <Compile Include="Interfaz\GestionMaquinas.Designer.vb">
+      <DependentUpon>GestionMaquinas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\GestionMaquinas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Interfaz\GestionUsuarios.Designer.vb">
+      <DependentUpon>GestionUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\GestionUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,8 +108,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Interfaz\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Interfaz\GestionUsuarios.resx">
+      <DependentUpon>GestionUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
