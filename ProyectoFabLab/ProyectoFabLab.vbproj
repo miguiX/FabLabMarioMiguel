@@ -73,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\GatewayMaquinas.vb" />
+    <Compile Include="Datos\GatewayReservas.vb" />
+    <Compile Include="Datos\GatewayTipoMaquina.vb" />
+    <Compile Include="Datos\GatewayTipoUsuario.vb" />
     <Compile Include="Datos\GatewayUsuarios.vb" />
     <Compile Include="Interfaz\GestionMaquinas.Designer.vb">
       <DependentUpon>GestionMaquinas.vb</DependentUpon>
