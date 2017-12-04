@@ -26,12 +26,14 @@ Public Class GatewayUsuaios
             comando.Parameters.Add("@apellidos", SqlDbType.VarChar)
             comando.Parameters("@apellidos").Value = apellidos
         End If
+
         If fecha_nacimiento = DateTime.MinValue Then
             Throw New ArgumentException("La fecha_nacimiento no puede estar vacía")
         Else
             comando.Parameters.Add("@fecha_nacimiento", SqlDbType.Date)
             comando.Parameters("@fecha_nacimiento").Value = fecha_nacimiento
         End If
+
         If telefono = "" Or telefono Is Nothing Then
             Throw New ArgumentException("La fecha_nacimiento no puede estar vacía")
         Else
