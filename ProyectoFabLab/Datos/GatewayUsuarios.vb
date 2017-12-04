@@ -10,6 +10,7 @@ Public Class GatewayUsuaios
     End Sub
 
     Public Function Insertar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date)
+        Dim filas As Integer
         Dim Consulta
 
         Consulta = String.Format("INSERT Into Usuarios (id,nombre,apellidos, fecha_nacimiento, email, direccion, Organizacion, tipo, fecha_alta) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", id, nombre, apellidos, fecha_nacimiento, email, direccion, Organizacion, tipo, fecha_alta)
@@ -27,5 +28,18 @@ Public Class GatewayUsuaios
         If fecha_nacimiento = "" Then
             Throw New ArgumentException("La fecha_nacimiento no puede estar vacía")
         End If
+
+        Try
+            conexion.Open()
+            comando.CommandText = Consulta
+            filas = comando.ExecuteNonQuery
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+        Return filas
     End Function
 End Class
