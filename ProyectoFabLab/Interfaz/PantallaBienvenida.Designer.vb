@@ -28,7 +28,7 @@ Partial Class PantallaBienvenida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(948, 425)
+        Me.ClientSize = New System.Drawing.Size(983, 442)
         Me.Name = "PantallaBienvenida"
         Me.Text = "Pantalla Bienvenida - FabLab"
         Me.ResumeLayout(False)
