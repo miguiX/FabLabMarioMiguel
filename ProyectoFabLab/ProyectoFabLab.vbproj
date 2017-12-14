@@ -77,6 +77,12 @@
     <Compile Include="Datos\GatewayTipoMaquina.vb" />
     <Compile Include="Datos\GatewayTipoUsuario.vb" />
     <Compile Include="Datos\GatewayUsuarios.vb" />
+    <Compile Include="Interfaz\PantallaBienvenida.Designer.vb">
+      <DependentUpon>PantallaBienvenida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\PantallaBienvenida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interfaz\GestionMaquinas.Designer.vb">
       <DependentUpon>GestionMaquinas.vb</DependentUpon>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\PantallaBienvenida.resx">
+      <DependentUpon>PantallaBienvenida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>

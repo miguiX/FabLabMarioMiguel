@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class GatewayUsuaios
+Public Class GatewayUsuarios
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
 
@@ -151,5 +151,12 @@ Public Class GatewayUsuaios
             End If
         End Try
         Return todo
+    End Function
+
+    Public Function ActualizarBaseDatosUsuarios() As Integer
+        Dim filas As Integer
+        Dim consulta As String = String.Format("ALTER TABLE [dbo].[Usuarios] ADD [observaciones] TEXT NULL")
+
+        Return filas
     End Function
 End Class
