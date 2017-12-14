@@ -37,15 +37,15 @@ Public Class GatewayMaquinas
             Throw New ArgumentException("El modelo no puede estar vacío")
         End If
 
-        If precio_hora = "" Or precio_hora = Nothing Then
+        If precio_hora = Nothing Then
             Throw New ArgumentException("El precio_hora no puede estar vacío")
         End If
 
-        If fecha_compra = "" Or fecha_compra = Nothing Then
+        If fecha_compra = Nothing Then
             Throw New ArgumentException("El precio_hora no puede estar vacío")
         End If
 
-        If tipo = "" Or tipo = Nothing Then
+        If tipo = Nothing Then
             Throw New ArgumentException("El tipo no puede estar vacío")
         End If
         'Comprobamos que el numero de telefono sea correcto en caso de que se escriba
@@ -124,15 +124,15 @@ Public Class GatewayMaquinas
             Throw New ArgumentException("El modelo no puede estar vacío")
         End If
 
-        If precio_hora = "" Or precio_hora = Nothing Then
+        If precio_hora = Nothing Then
             Throw New ArgumentException("El precio_hora no puede estar vacío")
         End If
 
-        If fecha_compra = "" Or fecha_compra = Nothing Then
+        If fecha_compra = Nothing Then
             Throw New ArgumentException("El precio_hora no puede estar vacío")
         End If
 
-        If tipo = "" Or tipo = Nothing Then
+        If tipo = Nothing Then
             Throw New ArgumentException("El tipo no puede estar vacío")
         End If
 
@@ -282,7 +282,7 @@ Public Class GatewayMaquinas
             Throw New ArgumentException("El modelo no puede estar vacío")
         End If
 
-        If fecha = "" Or fecha = Nothing Then
+        If fecha = Nothing Then
             Throw New ArgumentException("El precio_hora no puede estar vacío")
         End If
 
