@@ -26,14 +26,14 @@ Partial Class GestionUsuarios
         Me.LabelBuscar = New System.Windows.Forms.Label()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.DataGridViewUsuarios = New System.Windows.Forms.DataGridView()
+        Me.DataUsuarios = New System.Windows.Forms.DataGridView()
         Me.ButtonNuevoUsuario = New System.Windows.Forms.Button()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonConsultar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
-        CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -86,15 +86,15 @@ Partial Class GestionUsuarios
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(957, 57)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
-        'DataGridViewUsuarios
+        'DataUsuarios
         '
-        Me.DataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewUsuarios.Location = New System.Drawing.Point(0, 53)
-        Me.DataGridViewUsuarios.Name = "DataGridViewUsuarios"
-        Me.DataGridViewUsuarios.RowTemplate.Height = 24
-        Me.DataGridViewUsuarios.Size = New System.Drawing.Size(957, 339)
-        Me.DataGridViewUsuarios.TabIndex = 2
+        Me.DataUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataUsuarios.Location = New System.Drawing.Point(0, 53)
+        Me.DataUsuarios.Name = "DataUsuarios"
+        Me.DataUsuarios.RowTemplate.Height = 24
+        Me.DataUsuarios.Size = New System.Drawing.Size(957, 339)
+        Me.DataUsuarios.TabIndex = 2
         '
         'ButtonNuevoUsuario
         '
@@ -146,7 +146,7 @@ Partial Class GestionUsuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(957, 449)
-        Me.Controls.Add(Me.DataGridViewUsuarios)
+        Me.Controls.Add(Me.DataUsuarios)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "GestionUsuarios"
@@ -155,14 +155,14 @@ Partial Class GestionUsuarios
         Me.TableLayoutPanel1.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
-        CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents DataGridViewUsuarios As DataGridView
+    Friend WithEvents DataUsuarios As DataGridView
     Friend WithEvents LabelBuscar As Label
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents ButtonNuevoUsuario As Button

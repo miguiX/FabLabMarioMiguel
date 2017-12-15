@@ -20,4 +20,10 @@
         gestionMaquinas.MdiParent = Me
         gestionMaquinas.Show()
     End Sub
+
+    Private Sub GestionDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionDeUsuariosToolStripMenuItem.Click
+        Dim gestionUsuarios As GestionUsuarios = New GestionUsuarios()
+        gestionUsuarios.MdiParent = Me
+        gestionUsuarios.Show()
+    End Sub
 End Class
