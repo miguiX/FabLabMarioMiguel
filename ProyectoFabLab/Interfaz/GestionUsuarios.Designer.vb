@@ -25,12 +25,12 @@ Partial Class GestionUsuarios
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.LabelBuscar = New System.Windows.Forms.Label()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.DataUsuarios = New System.Windows.Forms.DataGridView()
         Me.ButtonNuevoUsuario = New System.Windows.Forms.Button()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonConsultar = New System.Windows.Forms.Button()
+        Me.DataUsuarios = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.DataUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +74,17 @@ Partial Class GestionUsuarios
         Me.TextBoxBuscar.Size = New System.Drawing.Size(346, 22)
         Me.TextBoxBuscar.TabIndex = 1
         '
+        'ButtonNuevoUsuario
+        '
+        Me.ButtonNuevoUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonNuevoUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ButtonNuevoUsuario.Location = New System.Drawing.Point(805, 3)
+        Me.ButtonNuevoUsuario.Name = "ButtonNuevoUsuario"
+        Me.ButtonNuevoUsuario.Size = New System.Drawing.Size(149, 47)
+        Me.ButtonNuevoUsuario.TabIndex = 2
+        Me.ButtonNuevoUsuario.Text = "Nuevo Usuario"
+        Me.ButtonNuevoUsuario.UseVisualStyleBackColor = True
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.ButtonEliminar)
@@ -85,29 +96,6 @@ Partial Class GestionUsuarios
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(957, 57)
         Me.FlowLayoutPanel1.TabIndex = 1
-        '
-        'DataUsuarios
-        '
-        Me.DataUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataUsuarios.Location = New System.Drawing.Point(0, 53)
-        Me.DataUsuarios.Name = "DataUsuarios"
-        Me.DataUsuarios.RowTemplate.Height = 24
-        Me.DataUsuarios.Size = New System.Drawing.Size(957, 339)
-        Me.DataUsuarios.TabIndex = 2
-        '
-        'ButtonNuevoUsuario
-        '
-        Me.ButtonNuevoUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonNuevoUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ButtonNuevoUsuario.Location = New System.Drawing.Point(805, 3)
-        Me.ButtonNuevoUsuario.Name = "ButtonNuevoUsuario"
-        Me.ButtonNuevoUsuario.Size = New System.Drawing.Size(149, 47)
-        Me.ButtonNuevoUsuario.TabIndex = 2
-        Me.ButtonNuevoUsuario.Text = "Nuevo Usuario"
-        Me.ButtonNuevoUsuario.UseVisualStyleBackColor = True
         '
         'ButtonEliminar
         '
@@ -143,6 +131,19 @@ Partial Class GestionUsuarios
         Me.ButtonConsultar.Text = "Consultar"
         Me.ButtonConsultar.UseVisualStyleBackColor = True
         '
+        'DataUsuarios
+        '
+        Me.DataUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataUsuarios.Location = New System.Drawing.Point(0, 53)
+        Me.DataUsuarios.Name = "DataUsuarios"
+        Me.DataUsuarios.ReadOnly = True
+        Me.DataUsuarios.RowTemplate.Height = 24
+        Me.DataUsuarios.Size = New System.Drawing.Size(957, 339)
+        Me.DataUsuarios.TabIndex = 2
+        '
         'GestionUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -152,7 +153,7 @@ Partial Class GestionUsuarios
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "GestionUsuarios"
-        Me.Text = "Form1"
+        Me.Text = "FabLab - Gestion usuarios"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)

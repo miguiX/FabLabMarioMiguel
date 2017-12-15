@@ -152,6 +152,26 @@ Public Class GatewayUsuarios
         End Try
         Return todo
     End Function
+    Public Function SelecionarConID(id As Integer) As DataTable
+        Dim Consulta As String
+        Dim todo As New DataTable
+        Dim reader As SqlDataReader
+
+        Consulta = String.Format("SELECT * FROM Usuarios WHERE id='{0}'", id)
+        Try
+            conexion.Open()
+            comando.CommandText = Consulta
+            reader = comando.ExecuteReader()
+            todo.Load(reader)
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+        Return todo
+    End Function
 
     Public Function ActualizarBaseDatosUsuarios() As Integer
         Dim filas As Integer
