@@ -247,8 +247,8 @@ Public Class GatewayMaquinas
             comando.Parameters.Add("@campo", SqlDbType.VarChar)
             comando.Parameters("@campo").Value = campo
 
-            consulta = "SELECT * FROM Maquinas" &
-                    "WHERE Nombre LIKE %@campo%"
+            consulta = "SELECT * FROM Maquinas " &
+                    "WHERE modelo LIKE '%' + @campo + '%'"
         End If
 
         'Ejecutamos la consulta

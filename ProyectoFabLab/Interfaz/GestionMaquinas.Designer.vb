@@ -24,14 +24,14 @@ Partial Class GestionMaquinas
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ButtonNuevaMaquina = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.ButtonEliminarMaquina = New System.Windows.Forms.Button()
+        Me.ButtonEditarMaquina = New System.Windows.Forms.Button()
+        Me.ButtonConsultarMaquina = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +64,7 @@ Partial Class GestionMaquinas
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Button1, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.ButtonNuevaMaquina, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.TextBox1, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
@@ -74,23 +74,23 @@ Partial Class GestionMaquinas
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(739, 29)
         Me.TableLayoutPanel2.TabIndex = 0
         '
+        'ButtonNuevaMaquina
+        '
+        Me.ButtonNuevaMaquina.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonNuevaMaquina.AutoSize = True
+        Me.ButtonNuevaMaquina.Location = New System.Drawing.Point(643, 3)
+        Me.ButtonNuevaMaquina.Name = "ButtonNuevaMaquina"
+        Me.ButtonNuevaMaquina.Size = New System.Drawing.Size(93, 23)
+        Me.ButtonNuevaMaquina.TabIndex = 1
+        Me.ButtonNuevaMaquina.Text = "Nueva Máquina"
+        Me.ButtonNuevaMaquina.UseVisualStyleBackColor = True
+        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(49, 3)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(196, 20)
         Me.TextBox1.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.AutoSize = True
-        Me.Button1.Location = New System.Drawing.Point(643, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Nueva Máquina"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -107,8 +107,11 @@ Partial Class GestionMaquinas
         '
         'DataGridView1
         '
+        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(3, 38)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(739, 292)
@@ -117,9 +120,9 @@ Partial Class GestionMaquinas
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.AutoSize = True
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button4)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.ButtonEliminarMaquina)
+        Me.FlowLayoutPanel1.Controls.Add(Me.ButtonEditarMaquina)
+        Me.FlowLayoutPanel1.Controls.Add(Me.ButtonConsultarMaquina)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 336)
@@ -127,34 +130,34 @@ Partial Class GestionMaquinas
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(739, 29)
         Me.FlowLayoutPanel1.TabIndex = 2
         '
-        'Button2
+        'ButtonEliminarMaquina
         '
-        Me.Button2.Location = New System.Drawing.Point(499, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Consultar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonEliminarMaquina.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonEliminarMaquina.Location = New System.Drawing.Point(661, 3)
+        Me.ButtonEliminarMaquina.Name = "ButtonEliminarMaquina"
+        Me.ButtonEliminarMaquina.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonEliminarMaquina.TabIndex = 1
+        Me.ButtonEliminarMaquina.Text = "Eliminar"
+        Me.ButtonEliminarMaquina.UseVisualStyleBackColor = True
         '
-        'Button3
+        'ButtonEditarMaquina
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(661, 3)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Eliminar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ButtonEditarMaquina.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonEditarMaquina.Location = New System.Drawing.Point(580, 3)
+        Me.ButtonEditarMaquina.Name = "ButtonEditarMaquina"
+        Me.ButtonEditarMaquina.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonEditarMaquina.TabIndex = 2
+        Me.ButtonEditarMaquina.Text = "Editar"
+        Me.ButtonEditarMaquina.UseVisualStyleBackColor = True
         '
-        'Button4
+        'ButtonConsultarMaquina
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.Location = New System.Drawing.Point(580, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Editar"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.ButtonConsultarMaquina.Location = New System.Drawing.Point(499, 3)
+        Me.ButtonConsultarMaquina.Name = "ButtonConsultarMaquina"
+        Me.ButtonConsultarMaquina.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonConsultarMaquina.TabIndex = 0
+        Me.ButtonConsultarMaquina.Text = "Consultar"
+        Me.ButtonConsultarMaquina.UseVisualStyleBackColor = True
         '
         'GestionMaquinas
         '
@@ -177,12 +180,12 @@ Partial Class GestionMaquinas
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonNuevaMaquina As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents ButtonEliminarMaquina As Button
+    Friend WithEvents ButtonEditarMaquina As Button
+    Friend WithEvents ButtonConsultarMaquina As Button
 End Class
