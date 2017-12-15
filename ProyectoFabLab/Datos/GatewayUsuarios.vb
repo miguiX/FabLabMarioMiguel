@@ -7,6 +7,7 @@ Public Class GatewayUsuarios
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand
+        comando.Connection = conexion
     End Sub
 
     Public Function Insertar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date) As Integer
@@ -141,7 +142,6 @@ Public Class GatewayUsuarios
             conexion.Open()
             comando.CommandText = Consulta
             reader = comando.ExecuteReader()
-
             todo.Load(reader)
         Catch ex As Exception
             Throw New Exception(ex.Message, ex)

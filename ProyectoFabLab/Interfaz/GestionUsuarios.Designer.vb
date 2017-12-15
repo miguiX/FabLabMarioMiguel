@@ -88,6 +88,8 @@ Partial Class GestionUsuarios
         '
         'DataUsuarios
         '
+        Me.DataUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataUsuarios.Location = New System.Drawing.Point(0, 53)
