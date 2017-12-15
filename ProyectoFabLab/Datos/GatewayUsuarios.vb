@@ -10,7 +10,7 @@ Public Class GatewayUsuarios
         comando.Connection = conexion
     End Sub
 
-    Public Function Insertar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date) As Integer
+    Public Function Insertar(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date) As Integer
         Dim filas As Integer
         Dim Consulta As String
 
