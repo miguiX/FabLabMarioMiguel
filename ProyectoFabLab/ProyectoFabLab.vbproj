@@ -193,9 +193,11 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Recursos\Thumbs.db" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Recursos\" />
+    <Content Include="Recursos\Fab_Lab_logo.png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
