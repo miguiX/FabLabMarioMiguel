@@ -7,13 +7,17 @@ Public Class GatewayTipoUsuario
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand
+        comando.Connection = conexion
     End Sub
 
     Public Function Insertar(tipo As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
 
-        Consulta = String.Format("INSERT INTO TiposUsuario(tipo={0})", tipo)
+        If tipo = "" Then
+            Throw New ArgumentException("No se puede dejar el tipo vacio")
+        End If
+        Consulta = String.Format("INSERT INTO TiposUsuario(tipo) VALUES ('{0}')", tipo)
 
         Try
             conexion.Open()

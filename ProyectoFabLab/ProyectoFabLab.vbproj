@@ -118,6 +118,12 @@
       <DependentUpon>Principal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Interfaz\Bienvenida.Designer.vb">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Bienvenida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Bienvenida.resx">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -6,7 +6,11 @@
 
     Public Sub AgregarUsuario(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date)
         Dim usuarios As New GatewayUsuarios(My.Settings.cadenaConexion)
-        CargarUsuarios()
+        usuarios.Insertar(nombre, apellidos, fecha_nacimiento, telefono, email, direccion, Organizacion, tipo, fecha_alta)
+    End Sub
+    Public Sub ModificarUsuario(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, observaciones As String)
+        Dim usuarios As New GatewayUsuarios(My.Settings.cadenaConexion)
+        usuarios.Actualizar(id, nombre, apellidos, fecha_nacimiento, telefono, email, direccion, Organizacion, tipo, observaciones)
     End Sub
 
     Public Function BuscarPorId(id As Integer) As DataTable

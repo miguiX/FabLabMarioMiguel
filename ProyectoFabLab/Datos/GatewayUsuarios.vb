@@ -84,7 +84,7 @@ Public Class GatewayUsuarios
         Return filas
     End Function
 
-    Public Function Actualizar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date) As Integer
+    Public Function Actualizar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, observaciones As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
 
@@ -92,7 +92,7 @@ Public Class GatewayUsuarios
             Throw New ArgumentException("El id no puede ser cero")
         End If
 
-        Consulta = String.Format("UPDATE Usuarios SET nombre={0},apellidos={1},fecha_nacimiento={2},telefono={3},email={4},direccion={5},organizacion={6},tipo={7},fecha_alta={8} WHERE id={9}", nombre, apellidos, fecha_nacimiento, email, direccion, Organizacion, tipo, fecha_alta, id)
+        Consulta = String.Format("UPDATE Usuarios SET nombre={0},apellidos={1},fecha_nacimiento={2},telefono={3},email={4},direccion={5},organizacion={6},tipo={7},observaciones={8} WHERE id={9}", nombre, apellidos, fecha_nacimiento, email, direccion, Organizacion, tipo, observaciones, id)
         Try
             conexion.Open()
             comando.CommandText = Consulta
