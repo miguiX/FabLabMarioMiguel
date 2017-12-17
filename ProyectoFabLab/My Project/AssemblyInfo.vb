@@ -8,8 +8,8 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("ProyectoFabLab")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("Proyecto FabLab")>
+<Assembly: AssemblyDescription("Aplicación para gestionar cualquier FabLab")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("ProyectoFabLab")>
 <Assembly: AssemblyCopyright("Copyright ©  2017")>

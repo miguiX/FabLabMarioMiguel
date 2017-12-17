@@ -20,7 +20,12 @@
     Public Sub ActualizarMaquina(id As Integer, modelo As String, precio_hora As Double, fecha_compra As Date, telefono_sat As String, tipo As Integer, descripcion As String, caracteristicas As String)
 
     End Sub
-    Private Function ExisteModeloFecha(modelo As String, fecha As Date) As Boolean
+    Public Function NumeroMaquinas() As Integer
+        Dim gateway As New GatewayMaquinas(My.Settings.cadenaConexion)
+        'Utilizamos el método SeleccionarModeloFecha del gateway
+        Return gateway.Seleccionar("").Rows.Count
+    End Function
+    Public Function ExisteModeloFecha(modelo As String, fecha As Date) As Boolean
         Dim gateway As New GatewayMaquinas(My.Settings.cadenaConexion)
         Dim tabla As DataTable
 

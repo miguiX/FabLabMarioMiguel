@@ -13,12 +13,9 @@
 
         Select Case boton.Name
             Case ButtonNuevaMaquina.Name
-                Dim nuevaMaquina As FormularioMaquina = New FormularioMaquina()
-                nuevaMaquina.MdiParent = Me.MdiParent
-                nuevaMaquina.Text = "FabLab - Nueva Máquina"
-                nuevaMaquina.Show()
+                NuevaMaquina()
             Case ButtonConsultarMaquina.Name
-
+                ConsultarMaquina()
             Case ButtonEditarMaquina.Name
 
             Case ButtonEliminarMaquina.Name
@@ -26,5 +23,29 @@
             Case Else
 
         End Select
+    End Sub
+    Public Sub NuevaMaquina()
+        Dim nuevaMaquina As FormularioMaquina = New FormularioMaquina()
+        nuevaMaquina.MdiParent = Me.MdiParent
+        nuevaMaquina.Text = "FabLab - Nueva Máquina"
+        nuevaMaquina.Show()
+    End Sub
+
+    Public Sub ConsultarMaquina()
+
+    End Sub
+
+    Public Sub EditarMaquina()
+
+    End Sub
+
+    Public Sub EliminarMaquina()
+
+    End Sub
+
+    Private Sub GestionMaquinas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If MessageBox.Show("¿Esta seguro que desea cerrar la ventana?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = 7 Then
+            e.Cancel = True
+        End If
     End Sub
 End Class

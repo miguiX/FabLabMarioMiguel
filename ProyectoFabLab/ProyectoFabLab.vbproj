@@ -81,6 +81,12 @@
     <Compile Include="Datos\GatewayTipoMaquina.vb" />
     <Compile Include="Datos\GatewayTipoUsuario.vb" />
     <Compile Include="Datos\GatewayUsuarios.vb" />
+    <Compile Include="Interfaz\AcercaDe.Designer.vb">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\AcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interfaz\FormularioMaquina.Designer.vb">
       <DependentUpon>FormularioMaquina.vb</DependentUpon>
     </Compile>
@@ -145,6 +151,9 @@
     <Compile Include="Negocios\Usuarios.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Interfaz\AcercaDe.resx">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\FormularioMaquina.resx">
       <DependentUpon>FormularioMaquina.vb</DependentUpon>
     </EmbeddedResource>
