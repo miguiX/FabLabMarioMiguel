@@ -10,7 +10,7 @@ Public Class GatewayUsuarios
         comando.Connection = conexion
     End Sub
 
-    Public Function Insertar(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date) As Integer
+    Public Function Insertar(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date, observaciones As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
 
@@ -41,6 +41,8 @@ Public Class GatewayUsuarios
             comando.Parameters.Add("@telefono", SqlDbType.VarChar)
             comando.Parameters("@telefono").Value = telefono
         End If
+        comando.Parameters.Add("@email", SqlDbType.VarChar)
+        comando.Parameters("@email").Value = email
 
         If direccion = "" Or direccion Is Nothing Then
             Throw New ArgumentException("La direccion no puede estar vacía")
@@ -63,12 +65,14 @@ Public Class GatewayUsuarios
         If fecha_alta = DateTime.MinValue Then
             Throw New ArgumentException("La fecha_nacimiento no puede estar vacía")
         Else
-            comando.Parameters.Add("@fecha_nacimiento", SqlDbType.Date)
-            comando.Parameters("@fecha_nacimiento").Value = fecha_alta
+            comando.Parameters.Add("@fecha_alta", SqlDbType.Date)
+            comando.Parameters("@fecha_alta").Value = fecha_alta
         End If
+        comando.Parameters.Add("@Observaciones", SqlDbType.Text)
+        comando.Parameters("@Observaciones").Value = observaciones
 
-        Consulta = "INSERT INTO Usuarios(nombre,apellidos,fecha_nacimiento,email,direccion,organizacion,tipo,fecha_alta)" &
-            "VALUES(@nombre,@apellidos,@fecha_nacimiento,@telefono,@email,@direccion,@organizacion,@tipo,@fecha_alta)"
+        Consulta = "INSERT INTO Usuarios(nombre,apellidos,fecha_nacimiento,telefono,email,direccion,organizacion,tipo,fecha_alta,Observaciones)" &
+            "VALUES(@nombre,@apellidos,@fecha_nacimiento,@telefono,@email,@direccion,@organizacion,@tipo,@fecha_alta,@Observaciones)"
 
         Try
             conexion.Open()
@@ -92,7 +96,7 @@ Public Class GatewayUsuarios
             Throw New ArgumentException("El id no puede ser cero")
         End If
 
-        Consulta = String.Format("UPDATE Usuarios SET nombre={0},apellidos={1},fecha_nacimiento={2},telefono={3},email={4},direccion={5},organizacion={6},tipo={7},observaciones={8} WHERE id={9}", nombre, apellidos, fecha_nacimiento, email, direccion, Organizacion, tipo, observaciones, id)
+        Consulta = String.Format("UPDATE Usuarios SET nombre={0},apellidos={1},fecha_nacimiento={2},telefono={3},email={4},direccion={5},organizacion={6},tipo={7},observaciones={8} WHERE id={9}", nombre, apellidos, fecha_nacimiento, email, direccion, Organizacion, tipo, observaciones, id.ToString)
         Try
             conexion.Open()
             comando.CommandText = Consulta

@@ -101,10 +101,10 @@ Partial Class GestionUsuarios
         '
         Me.ButtonEliminar.AutoSize = True
         Me.ButtonEliminar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ButtonEliminar.Location = New System.Drawing.Point(886, 3)
+        Me.ButtonEliminar.Location = New System.Drawing.Point(865, 3)
         Me.ButtonEliminar.Margin = New System.Windows.Forms.Padding(20, 3, 3, 3)
         Me.ButtonEliminar.Name = "ButtonEliminar"
-        Me.ButtonEliminar.Size = New System.Drawing.Size(68, 27)
+        Me.ButtonEliminar.Size = New System.Drawing.Size(89, 27)
         Me.ButtonEliminar.TabIndex = 0
         Me.ButtonEliminar.Text = "Eliminar"
         Me.ButtonEliminar.UseVisualStyleBackColor = True
@@ -112,7 +112,7 @@ Partial Class GestionUsuarios
         'ButtonEditar
         '
         Me.ButtonEditar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ButtonEditar.Location = New System.Drawing.Point(748, 3)
+        Me.ButtonEditar.Location = New System.Drawing.Point(727, 3)
         Me.ButtonEditar.Margin = New System.Windows.Forms.Padding(20, 3, 3, 3)
         Me.ButtonEditar.Name = "ButtonEditar"
         Me.ButtonEditar.Size = New System.Drawing.Size(115, 27)
@@ -123,7 +123,7 @@ Partial Class GestionUsuarios
         'ButtonConsultar
         '
         Me.ButtonConsultar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ButtonConsultar.Location = New System.Drawing.Point(597, 3)
+        Me.ButtonConsultar.Location = New System.Drawing.Point(576, 3)
         Me.ButtonConsultar.Margin = New System.Windows.Forms.Padding(20, 3, 3, 3)
         Me.ButtonConsultar.Name = "ButtonConsultar"
         Me.ButtonConsultar.Size = New System.Drawing.Size(128, 27)

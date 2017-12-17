@@ -4,9 +4,9 @@
         Return usuarios.SeleccionarTodo
     End Function
 
-    Public Sub AgregarUsuario(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date)
+    Public Sub AgregarUsuario(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date, observaciones As String)
         Dim usuarios As New GatewayUsuarios(My.Settings.cadenaConexion)
-        usuarios.Insertar(nombre, apellidos, fecha_nacimiento, telefono, email, direccion, Organizacion, tipo, fecha_alta)
+        usuarios.Insertar(nombre, apellidos, fecha_nacimiento, telefono, email, direccion, Organizacion, tipo, fecha_alta, observaciones)
     End Sub
     Public Sub ModificarUsuario(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, observaciones As String)
         Dim usuarios As New GatewayUsuarios(My.Settings.cadenaConexion)

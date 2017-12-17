@@ -17,7 +17,7 @@
         AñadirNuevosTiposOcultar()
         CargarTipos()
         If Cargar = "Editar" Then
-
+            CargarUsuario()
         ElseIf Cargar = "Consultar" Then
             ButtonAñadirNuevoTipo.Hide()
             BloquearTodo()
@@ -61,7 +61,15 @@
     End Sub
 
     Private Sub ButtonAceptar_Click(sender As Object, e As EventArgs) Handles ButtonAceptar.Click
-        Usuarios.ModificarUsuario(id, MaskedTextBoxNombre.Text, MaskedTextBoxApellidos.Text, DateTimePickerFechaNacimiento.Value, MaskedTextBoxTelefono.Text, MaskedTextBoxEmail.Text, MaskedTextBoxDireccion.Text, MaskedTextBoxOrganizacion.Text, ComboBoxTipo.SelectedIndex + 1, RichTextBoxObservaciones.Text)
+        If Cargar = "Nuevo" Then
+            Usuarios.AgregarUsuario(MaskedTextBoxNombre.Text, MaskedTextBoxApellidos.Text, DateTimePickerFechaNacimiento.Value, MaskedTextBoxTelefono.Text, MaskedTextBoxEmail.Text, MaskedTextBoxDireccion.Text, MaskedTextBoxOrganizacion.Text, ComboBoxTipo.SelectedIndex + 1, DateTime.Now.Date, RichTextBoxObservaciones.Text)
+            Me.Close()
+        ElseIf Cargar = "Editar" Then
+            Usuarios.ModificarUsuario(id, MaskedTextBoxNombre.Text, MaskedTextBoxApellidos.Text, DateTimePickerFechaNacimiento.Value, MaskedTextBoxTelefono.Text, MaskedTextBoxEmail.Text, MaskedTextBoxDireccion.Text, MaskedTextBoxOrganizacion.Text, ComboBoxTipo.SelectedIndex + 1, RichTextBoxObservaciones.Text)
+            Me.Close()
+        ElseIf Cargar = "Consultar" Then
+            Me.Close()
+        End If
     End Sub
 
     Private Sub ButtonCancelar_Click(sender As Object, e As EventArgs) Handles ButtonCancelar.Click
