@@ -23,7 +23,6 @@ Partial Class GestionUsuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.LabelBuscar = New System.Windows.Forms.Label()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.ButtonNuevoUsuario = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -31,6 +30,7 @@ Partial Class GestionUsuarios
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonConsultar = New System.Windows.Forms.Button()
         Me.DataUsuarios = New System.Windows.Forms.DataGridView()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.DataUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,9 +42,9 @@ Partial Class GestionUsuarios
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.52632!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.84211!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.63158!))
-        Me.TableLayoutPanel1.Controls.Add(Me.LabelBuscar, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBoxBuscar, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.ButtonNuevoUsuario, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonBuscar, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
@@ -53,17 +53,6 @@ Partial Class GestionUsuarios
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(957, 53)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'LabelBuscar
-        '
-        Me.LabelBuscar.AutoSize = True
-        Me.LabelBuscar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelBuscar.Location = New System.Drawing.Point(3, 0)
-        Me.LabelBuscar.Name = "LabelBuscar"
-        Me.LabelBuscar.Size = New System.Drawing.Size(94, 53)
-        Me.LabelBuscar.TabIndex = 0
-        Me.LabelBuscar.Text = "Buscar"
-        Me.LabelBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TextBoxBuscar
         '
@@ -144,6 +133,16 @@ Partial Class GestionUsuarios
         Me.DataUsuarios.Size = New System.Drawing.Size(957, 339)
         Me.DataUsuarios.TabIndex = 2
         '
+        'ButtonBuscar
+        '
+        Me.ButtonBuscar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonBuscar.Location = New System.Drawing.Point(3, 3)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(94, 47)
+        Me.ButtonBuscar.TabIndex = 3
+        Me.ButtonBuscar.Text = "Buscar"
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
+        '
         'GestionUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -166,10 +165,10 @@ Partial Class GestionUsuarios
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents DataUsuarios As DataGridView
-    Friend WithEvents LabelBuscar As Label
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents ButtonNuevoUsuario As Button
     Friend WithEvents ButtonEliminar As Button
     Friend WithEvents ButtonEditar As Button
     Friend WithEvents ButtonConsultar As Button
+    Friend WithEvents ButtonBuscar As Button
 End Class

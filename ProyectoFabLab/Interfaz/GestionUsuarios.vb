@@ -17,6 +17,9 @@
     Private Sub Reload()
         DataUsuarios.DataSource = Usuarios.CargarUsuarios
     End Sub
+    Private Sub BuscarPorNombre()
+        DataUsuarios.DataSource = Usuarios.BuscarPorNombre(TextBoxBuscar.Text)
+    End Sub
 
     Private Sub ButtonConsultar_Click(sender As Object, e As EventArgs) Handles ButtonConsultar.Click
         Dim NuevoUsuarioForm As NuevoUsuario = New NuevoUsuario()
@@ -99,8 +102,11 @@
         Dim i As Integer
         i = DataUsuarios.CurrentRow.Index
         id = Integer.Parse(DataUsuarios.Item(0, i).Value.ToString)
-
         Usuarios.Eliminar(id)
         Reload()
+    End Sub
+
+    Private Sub ButtonBuscar_Click(sender As Object, e As EventArgs) Handles ButtonBuscar.Click
+        BuscarPorNombre()
     End Sub
 End Class

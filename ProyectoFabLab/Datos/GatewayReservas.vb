@@ -4,11 +4,23 @@ Public Class GatewayReservas
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
 
+    ''' <summary>
+    ''' Conecta el programa con la base de datos
+    ''' </summary>
+    ''' <param name="cadenaConexion"></param>
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand
     End Sub
 
+    ''' <summary>
+    ''' Inserta una reserva en la base de datos
+    ''' </summary>
+    ''' <param name="fecha">fecha de la reserva</param>
+    ''' <param name="hora">hora de la reserva</param>
+    ''' <param name="usuario">usuario que tiene reservada la maquina</param>
+    ''' <param name="proyecto">proyecto en el cual se utilizara la maquina</param>
+    ''' <returns></returns>
     Public Function Insertar(fecha As Date, hora As Timer, usuario As Integer, proyecto As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
@@ -29,6 +41,10 @@ Public Class GatewayReservas
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Actualiza una reserva
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Actualizar(id As Integer, fecha As Date, hora As Timer, usuario As Integer, proyecto As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
@@ -53,6 +69,10 @@ Public Class GatewayReservas
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Elimina una reserva
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Eliminar(id As Integer) As Integer
         Dim filas As Integer
         Dim consulta As String = String.Format("DELETE FROM Reservas WHERE id={0}", id)
@@ -75,6 +95,10 @@ Public Class GatewayReservas
 
         Return filas
     End Function
+    ''' <summary>
+    ''' Selecciona toda la tabla de reservas para mostrar en un datagrid
+    ''' </summary>
+    ''' <returns></returns>
     Public Function SeleccionarTodo() As DataTable
         Dim Consulta As String
         Dim todo As New DataTable

@@ -4,12 +4,29 @@ Public Class GatewayUsuarios
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
 
+    ''' <summary>
+    ''' Conecta el programa con la base de datos
+    ''' </summary>
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand
         comando.Connection = conexion
     End Sub
 
+    ''' <summary>
+    ''' Inserta un usuario en la base de datos
+    ''' </summary>
+    ''' <param name="nombre">Nombre del usuario</param>
+    ''' <param name="apellidos">Apellidos del usuario</param>
+    ''' <param name="fecha_nacimiento">Fecha de nacimiento del usuario</param>
+    ''' <param name="telefono">Telefono del usuario</param>
+    ''' <param name="email">email del usuario</param>
+    ''' <param name="direccion">Direccion del usuario</param>
+    ''' <param name="Organizacion">Organizacion a la que pertenece el usuario</param>
+    ''' <param name="tipo">Tipo de usuario del FabLab</param>
+    ''' <param name="fecha_alta">Fecha de alta del usuario en el FabLab</param>
+    ''' <param name="observaciones">Observaciones sobre el usuario</param>
+    ''' <returns></returns>
     Public Function Insertar(nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, fecha_alta As Date, observaciones As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
@@ -88,6 +105,10 @@ Public Class GatewayUsuarios
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Actualiza los datos de un usuario
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Actualizar(id As Integer, nombre As String, apellidos As String, fecha_nacimiento As Date, telefono As String, email As String, direccion As String, Organizacion As String, tipo As Integer, observaciones As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
@@ -112,6 +133,10 @@ Public Class GatewayUsuarios
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Elimina un usuario
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Eliminar(id As Integer) As Integer
         Dim filas As Integer
         Dim consulta As String = String.Format("DELETE FROM Usuarios WHERE id={0}", id)
@@ -135,6 +160,10 @@ Public Class GatewayUsuarios
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Selecciona toda la tabla para mostrarla en un datagrid
+    ''' </summary>
+    ''' <returns></returns>
     Public Function SeleccionarTodo() As DataTable
         Dim Consulta As String
         Dim todo As New DataTable
@@ -156,12 +185,20 @@ Public Class GatewayUsuarios
         End Try
         Return todo
     End Function
-    Public Function SelecionarConID(id As Integer) As DataTable
+
+    ''' <summary>
+    ''' Permite buscar un usuario dentro de la tabla usando su nombre
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function BuscarPorNombre(nombre As String) As DataTable
         Dim Consulta As String
         Dim todo As New DataTable
         Dim reader As SqlDataReader
 
-        Consulta = String.Format("SELECT * FROM Usuarios WHERE id='{0}'", id)
+        If nombre = "" Or nombre Is Nothing Then
+            Throw New ArgumentException("El nombre no puede estar vacio")
+        End If
+        Consulta = String.Format("SELECT * FROM Usuarios WHERE nombre='{0}'", nombre)
         Try
             conexion.Open()
             comando.CommandText = Consulta
@@ -175,12 +212,5 @@ Public Class GatewayUsuarios
             End If
         End Try
         Return todo
-    End Function
-
-    Public Function ActualizarBaseDatosUsuarios() As Integer
-        Dim filas As Integer
-        Dim consulta As String = String.Format("ALTER TABLE [dbo].[Usuarios] ADD [observaciones] TEXT NULL")
-
-        Return filas
     End Function
 End Class

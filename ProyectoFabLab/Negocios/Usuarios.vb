@@ -13,11 +13,6 @@
         usuarios.Actualizar(id, nombre, apellidos, fecha_nacimiento, telefono, email, direccion, Organizacion, tipo, observaciones)
     End Sub
 
-    Public Function BuscarPorId(id As Integer) As DataTable
-        Dim usuario As New GatewayUsuarios(My.Settings.cadenaConexion)
-        Return usuario.SelecionarConID(id)
-    End Function
-
     Public Sub Eliminar(id As Integer)
         Dim usuario As New GatewayUsuarios(My.Settings.cadenaConexion)
         usuario.Eliminar(id)
@@ -41,5 +36,8 @@
         usuario.Insertar(TipoUsuario)
     End Sub
 
-
+    Public Function BuscarPorNombre(ByVal Nombre As String) As DataTable
+        Dim usuario As New GatewayUsuarios(My.Settings.cadenaConexion)
+        Return usuario.BuscarPorNombre(Nombre)
+    End Function
 End Module
