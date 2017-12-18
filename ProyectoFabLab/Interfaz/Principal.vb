@@ -1,4 +1,5 @@
 ﻿Public Class Principal
+    Dim CargarNuevoUsuario As String
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Inicializar statusStrip
         ToolStripStatusLabel2.Text = "Máquinas: " & NumeroMaquinas().ToString()
@@ -48,5 +49,14 @@
         If MessageBox.Show("¿Esta seguro que desea cerrar la ventana?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = 7 Then
             e.Cancel = True
         End If
+    End Sub
+
+    Private Sub NuevoUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoUsuarioToolStripMenuItem.Click
+        Dim NuevoUsuarioForm As NuevoUsuario = New NuevoUsuario()
+        NuevoUsuarioForm.MdiParent = Me
+        NuevoUsuarioForm.Text = "FabLab - Nuevo Usuario"
+        CargarNuevoUsuario = "Nuevo"
+        NuevoUsuarioForm.Cargar = CargarNuevoUsuario
+        NuevoUsuarioForm.Show()
     End Sub
 End Class
