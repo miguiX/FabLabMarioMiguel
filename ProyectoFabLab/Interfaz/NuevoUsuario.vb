@@ -135,4 +135,21 @@ Public Class NuevoUsuario
     Private Sub MaskedTextBoxEmail_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaskedTextBoxEmail.Validating
         ErrorTextBox.SetError(MaskedTextBoxEmail, "")
     End Sub
+
+    Private Sub PonerImagen()
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.Image = System.Drawing.Bitmap.FromFile(My.Settings.CarpetaImagenes & id & MaskedTextBoxNombre.Text.Trim() & ".jpg")
+    End Sub
+
+    Private Sub ButtonExaminar_Click(sender As Object, e As EventArgs) Handles ButtonExaminar.Click
+        OpenFileDialogFoto.Filter = "Bitmap |*.bmp| JPG | *.jpg | GIF | *.gif | All Files|*.*"
+        OpenFileDialogFoto.FileName = ""
+
+        If OpenFileDialogFoto.ShowDialog(Me) = DialogResult.OK Then
+            Dim img As String = OpenFileDialogFoto.FileName
+            FileCopy(img, My.Settings.CarpetaImagenes)
+            My.Computer.FileSystem.RenameFile(My.Settings.CarpetaImagenes & img, id & MaskedTextBoxNombre.Text.Trim() & ".jpg")
+            PictureBox1.Image = System.Drawing.Bitmap.FromFile(img)
+        End If
+    End Sub
 End Class

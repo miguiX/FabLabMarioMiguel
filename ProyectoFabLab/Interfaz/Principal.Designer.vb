@@ -39,10 +39,15 @@ Partial Class Principal
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripButtonGestionUsuarios = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButtonNuevoUsuario = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButtonGestionMaquinas = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButtonNuevaMaquina = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -155,11 +160,48 @@ Partial Class Principal
         'ToolStrip1
         '
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButtonGestionUsuarios, Me.ToolStripButtonNuevoUsuario, Me.ToolStripButtonGestionMaquinas, Me.ToolStripButtonNuevaMaquina})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 28)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1033, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1033, 27)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripButtonGestionUsuarios
+        '
+        Me.ToolStripButtonGestionUsuarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButtonGestionUsuarios.Image = Global.ProyectoFabLab.My.Resources.Resources.Icons_Land_Vista_People_Groups_Meeting_Dark
+        Me.ToolStripButtonGestionUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonGestionUsuarios.Name = "ToolStripButtonGestionUsuarios"
+        Me.ToolStripButtonGestionUsuarios.Size = New System.Drawing.Size(24, 24)
+        Me.ToolStripButtonGestionUsuarios.Text = "ToolStripButton"
+        '
+        'ToolStripButtonNuevoUsuario
+        '
+        Me.ToolStripButtonNuevoUsuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButtonNuevoUsuario.Image = Global.ProyectoFabLab.My.Resources.Resources.Oxygen_Icons_org_Oxygen_Actions_list_add_user
+        Me.ToolStripButtonNuevoUsuario.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonNuevoUsuario.Name = "ToolStripButtonNuevoUsuario"
+        Me.ToolStripButtonNuevoUsuario.Size = New System.Drawing.Size(24, 24)
+        Me.ToolStripButtonNuevoUsuario.Text = "ToolStripButton2"
+        '
+        'ToolStripButtonGestionMaquinas
+        '
+        Me.ToolStripButtonGestionMaquinas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButtonGestionMaquinas.Image = Global.ProyectoFabLab.My.Resources.Resources.Icons8_Windows_8_Printing_Cnc_Machine
+        Me.ToolStripButtonGestionMaquinas.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonGestionMaquinas.Name = "ToolStripButtonGestionMaquinas"
+        Me.ToolStripButtonGestionMaquinas.Size = New System.Drawing.Size(24, 24)
+        Me.ToolStripButtonGestionMaquinas.Text = "ToolStripButton3"
+        '
+        'ToolStripButtonNuevaMaquina
+        '
+        Me.ToolStripButtonNuevaMaquina.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButtonNuevaMaquina.Image = Global.ProyectoFabLab.My.Resources.Resources.Icons8_Windows_8_Files_Add_List
+        Me.ToolStripButtonNuevaMaquina.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonNuevaMaquina.Name = "ToolStripButtonNuevaMaquina"
+        Me.ToolStripButtonNuevaMaquina.Size = New System.Drawing.Size(24, 24)
+        Me.ToolStripButtonNuevaMaquina.Text = "ToolStripButton4"
         '
         'StatusStrip1
         '
@@ -199,6 +241,8 @@ Partial Class Principal
         Me.Text = "FabLab - Ventana Principal"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -226,4 +270,8 @@ Partial Class Principal
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents HorizontalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerticalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripButtonGestionUsuarios As ToolStripButton
+    Friend WithEvents ToolStripButtonNuevoUsuario As ToolStripButton
+    Friend WithEvents ToolStripButtonGestionMaquinas As ToolStripButton
+    Friend WithEvents ToolStripButtonNuevaMaquina As ToolStripButton
 End Class

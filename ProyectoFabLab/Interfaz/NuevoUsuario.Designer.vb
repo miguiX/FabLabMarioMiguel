@@ -54,8 +54,9 @@ Partial Class NuevoUsuario
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonExaminar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.OpenFileDialogFoto = New System.Windows.Forms.OpenFileDialog()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -356,7 +357,7 @@ Partial Class NuevoUsuario
         'Panel10
         '
         Me.Panel10.Controls.Add(Me.PictureBox1)
-        Me.Panel10.Controls.Add(Me.Button2)
+        Me.Panel10.Controls.Add(Me.ButtonExaminar)
         Me.Panel10.Controls.Add(Me.Label2)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(3, 3)
@@ -372,14 +373,14 @@ Partial Class NuevoUsuario
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'Button2
+        'ButtonExaminar
         '
-        Me.Button2.Location = New System.Drawing.Point(68, 13)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(118, 27)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Examinar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonExaminar.Location = New System.Drawing.Point(68, 13)
+        Me.ButtonExaminar.Name = "ButtonExaminar"
+        Me.ButtonExaminar.Size = New System.Drawing.Size(118, 27)
+        Me.ButtonExaminar.TabIndex = 1
+        Me.ButtonExaminar.Text = "Examinar"
+        Me.ButtonExaminar.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -389,6 +390,10 @@ Partial Class NuevoUsuario
         Me.Label2.Size = New System.Drawing.Size(40, 17)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Foto:"
+        '
+        'OpenFileDialogFoto
+        '
+        Me.OpenFileDialogFoto.FileName = "OpenFileDialog1"
         '
         'NuevoUsuario
         '
@@ -423,7 +428,7 @@ Partial Class NuevoUsuario
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel10 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents ButtonExaminar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel12 As Panel
     Friend WithEvents ButtonCancelar As Button
@@ -449,4 +454,5 @@ Partial Class NuevoUsuario
     Friend WithEvents LabelNuevoTipo As Label
     Friend WithEvents TextBoxNuevoTipo As MaskedTextBox
     Friend WithEvents ButtonAñadirTipo As Button
+    Friend WithEvents OpenFileDialogFoto As OpenFileDialog
 End Class

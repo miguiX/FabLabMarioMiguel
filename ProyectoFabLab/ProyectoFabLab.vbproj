@@ -197,6 +197,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="imagenes\iconos\Oxygen-Icons.org-Oxygen-Actions-list-add-user.ico" />
+    <None Include="imagenes\iconos\Icons-Land-Vista-People-Groups-Meeting-Dark.ico" />
+    <None Include="imagenes\iconos\Icons8-Windows-8-Printing-Cnc-Machine.ico" />
+    <None Include="imagenes\iconos\Icons8-Windows-8-Files-Add-List.ico" />
     <Content Include="Recursos\Fab_Lab_logo.png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

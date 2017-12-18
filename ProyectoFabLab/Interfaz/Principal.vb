@@ -59,4 +59,34 @@
         NuevoUsuarioForm.Cargar = CargarNuevoUsuario
         NuevoUsuarioForm.Show()
     End Sub
+
+    Private Sub ToolStripButtonGestionUsuarios_Click(sender As Object, e As EventArgs) Handles ToolStripButtonGestionUsuarios.Click
+        Dim gestionUsuarios As GestionUsuarios = New GestionUsuarios()
+        gestionUsuarios.MdiParent = Me
+        gestionUsuarios.Text = "FabLab - Gestion Usuarios"
+        gestionUsuarios.Show()
+    End Sub
+
+    Private Sub ToolStripButtonNuevoUsuario_Click(sender As Object, e As EventArgs) Handles ToolStripButtonNuevoUsuario.Click
+        Dim NuevoUsuarioForm As NuevoUsuario = New NuevoUsuario()
+        NuevoUsuarioForm.MdiParent = Me
+        NuevoUsuarioForm.Text = "FabLab - Nuevo Usuario"
+        CargarNuevoUsuario = "Nuevo"
+        NuevoUsuarioForm.Cargar = CargarNuevoUsuario
+        NuevoUsuarioForm.Show()
+    End Sub
+
+    Private Sub ToolStripButtonGestionMaquinas_Click(sender As Object, e As EventArgs) Handles ToolStripButtonGestionMaquinas.Click
+        Dim gestionMaquinas As GestionMaquinas = New GestionMaquinas()
+        gestionMaquinas.MdiParent = Me
+        gestionMaquinas.Text = "FabLab - Gestion Máquinas"
+        gestionMaquinas.Show()
+    End Sub
+
+    Private Sub ToolStripButtonNuevaMaquina_Click(sender As Object, e As EventArgs) Handles ToolStripButtonNuevaMaquina.Click
+        Dim nuevaMaquina As FormularioMaquina = New FormularioMaquina()
+        nuevaMaquina.MdiParent = Me
+        nuevaMaquina.Text = "FabLab - Nueva Máquina"
+        nuevaMaquina.Show()
+    End Sub
 End Class
