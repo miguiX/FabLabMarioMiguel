@@ -22,16 +22,16 @@ Public Class GatewayMaquinas
     ''' </summary>
     ''' <param name="modelo"></param>
     ''' <param name="precio_hora"></param>
-    ''' <param name="fecha_compra"></param>
+    ''' <param name="fecha"></param>
     ''' <param name="telefono_sat"></param>
     ''' <param name="tipo"></param>
     ''' <param name="descripcion"></param>
     ''' <param name="caracteristicas"></param>
     ''' <returns>Número de filas afectadas por la consulta</returns>
-    Public Function Insertar(modelo As String, precio_hora As Double, fecha_compra As Date, telefono_sat As String, tipo As Integer, descripcion As String, caracteristicas As String) As Integer
+    Public Function Insertar(modelo As String, precio_hora As Double, fecha As Date, telefono_sat As String, tipo As Integer, descripcion As String, caracteristicas As String) As Integer
         Dim filas As Integer
         Dim consulta As String
-
+        Dim fecha_compra As String = fecha.Year & "-" & fecha.Month & "-" & fecha.Day
         'Validamos los datos
         If modelo = "" Or modelo Is Nothing Then
             Throw New ArgumentException("El modelo no puede estar vacío")
@@ -81,8 +81,8 @@ Public Class GatewayMaquinas
         comando.Parameters("@caracteristicas").Value = caracteristicas
 
         'Creamos la sentencia SQL de inserción
-        consulta = "INSERT INTO Maquinas(modelo,precio_hora,fecha_compra,tipo,telefono_sat,descripcion,caracteristicas)" &
-            "VALUES(@modelo,@precio_hora,@tipo,@telefono_sat,@descripcion,@caracteristicas)"
+        consulta = "INSERT INTO Maquinas(modelo,precio_hora,fecha_compra,tipo,telefono_sat,descripcion,caracteristicas) " &
+          "VALUES(@modelo,@precio_hora,@fecha_compra,@tipo,@telefono_sat,@descripcion,@caracteristicas)"
 
         'Ejecutamos la consulta
         Try
@@ -171,13 +171,13 @@ Public Class GatewayMaquinas
         comando.Parameters.Add("@caracteristicas", SqlDbType.Text)
         comando.Parameters("@caracteristicas").Value = caracteristicas
 
-        consulta = "UPDATE Maquinas SET" &
-                "modelo = @modelo," &
-                "precio_hora = @precio_hora," &
-                "fecha_compra = @fecha_compra," &
-                "tipo = @tipo," &
-                "descripcion = @descripcion," &
-                "caracteristicas = @caracteristicas" &
+        consulta = "UPDATE Maquinas Set " &
+                "modelo = @modelo, " &
+                "precio_hora = @precio_hora, " &
+                "fecha_compra = @fecha_compra, " &
+                "tipo = @tipo, " &
+                "descripcion = @descripcion, " &
+                "caracteristicas = @caracteristicas " &
                 "WHERE id = @id"
 
         'Ejecutamos la consulta
@@ -242,13 +242,13 @@ Public Class GatewayMaquinas
         Dim reader As SqlDataReader
 
         If (campo = "" Or campo = Nothing) Then
-            consulta = "SELECT * FROM Maquinas"
+            consulta = "Select Maquinas.id,Maquinas.Modelo,TiposMaquina.tipo AS 'Tipo',Maquinas.precio_hora AS 'Precio hora',Maquinas.telefono_sat AS 'Teléfono SAT' FROM Maquinas JOIN TiposMaquina ON TiposMaquina.id = Maquinas.tipo"
         Else
             comando.Parameters.Add("@campo", SqlDbType.VarChar)
             comando.Parameters("@campo").Value = campo
 
-            consulta = "SELECT * FROM Maquinas " &
-                    "WHERE modelo LIKE '%' + @campo + '%'"
+            consulta = "Select * FROM Maquinas " &
+                    "WHERE modelo Like '%' + @campo + '%'"
         End If
 
         'Ejecutamos la consulta
@@ -277,6 +277,7 @@ Public Class GatewayMaquinas
         Dim consulta As String
         Dim resultado As New DataTable
         Dim reader As SqlDataReader
+        Dim fecha_compra As String = fecha.Year & "-" & fecha.Month & "-" & fecha.Day
 
         If modelo = "" Or modelo Is Nothing Then
             Throw New ArgumentException("El modelo no puede estar vacío")
@@ -290,11 +291,40 @@ Public Class GatewayMaquinas
         comando.Parameters("@modelo").Value = modelo
 
         comando.Parameters.Add("@fecha_compra", SqlDbType.Date)
-        comando.Parameters("@fecha").Value = fecha
+        comando.Parameters("@fecha_compra").Value = fecha_compra
 
-        consulta = "SELECT modelo" &
-                   "FROM Maquinas" &
-                   "WHERE modelo = @modelo AND fecha_compra = @fecha"
+        consulta = "SELECT modelo " &
+                   "FROM Maquinas " &
+        "WHERE modelo = @modelo AND fecha_compra = @fecha_compra"
+
+        'Ejecutamos la consulta
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
+            reader = comando.ExecuteReader()
+            'Cargamos el DataTable
+            resultado.Load(reader)
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+        Return resultado
+
+    End Function
+    Public Function SeleccionarPorId(id As Integer) As DataTable
+        Dim consulta As String = ""
+        Dim resultado As New DataTable
+        Dim reader As SqlDataReader
+
+        comando.Parameters.Add("@id", SqlDbType.Int)
+        comando.Parameters("@id").Value = id
+
+        consulta = "SELECT *" &
+                   "FROM Maquinas " &
+                   "WHERE id = @id"
 
         'Ejecutamos la consulta
         Try

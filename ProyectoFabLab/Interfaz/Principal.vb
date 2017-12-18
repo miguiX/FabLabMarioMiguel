@@ -1,6 +1,8 @@
 ﻿Public Class Principal
+    Public gestionMaquinas As GestionMaquinas
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Inicializar statusStrip
+        GestionMaquinas = New GestionMaquinas()
         ToolStripStatusLabel2.Text = "Máquinas: " & NumeroMaquinas().ToString()
     End Sub
 
@@ -12,7 +14,6 @@
     End Sub
 
     Private Sub GestiónDeMáquinasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeMáquinasToolStripMenuItem.Click
-        Dim gestionMaquinas As GestionMaquinas = New GestionMaquinas()
         gestionMaquinas.MdiParent = Me
         gestionMaquinas.Show()
     End Sub
