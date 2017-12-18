@@ -62,6 +62,7 @@ Public Class NuevoUsuario
         MaskedTextBoxOrganizacion.Text = Organizacion
         MaskedTextBoxDireccion.Text = Direccion
         DateTimePickerFechaNacimiento.Value = FechaNacimiento
+        RichTextBoxObservaciones.Text = Observaciones
     End Sub
 
     Private Sub ButtonAceptar_Click(sender As Object, e As EventArgs) Handles ButtonAceptar.Click
