@@ -213,4 +213,7 @@ Public Class GatewayUsuarios
         End Try
         Return todo
     End Function
+    Public Function NumeroDeUsuarios() As Integer
+
+    End Function
 End Class

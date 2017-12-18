@@ -23,6 +23,27 @@ Partial Class NuevoUsuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ButtonAñadirTipo = New System.Windows.Forms.Button()
+        Me.TextBoxNuevoTipo = New System.Windows.Forms.MaskedTextBox()
+        Me.ButtonAñadirNuevoTipo = New System.Windows.Forms.Button()
+        Me.ComboBoxTipo = New System.Windows.Forms.ComboBox()
+        Me.LabelNuevoTipo = New System.Windows.Forms.Label()
+        Me.DateTimePickerFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.MaskedTextBoxDireccion = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxEmail = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxApellidos = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxOrganizacion = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxTelefono = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxNombre = New System.Windows.Forms.MaskedTextBox()
+        Me.LabelDireccion = New System.Windows.Forms.Label()
+        Me.LabelFechaNacimiento = New System.Windows.Forms.Label()
+        Me.LabelTipo = New System.Windows.Forms.Label()
+        Me.LabelEmail = New System.Windows.Forms.Label()
+        Me.LabelApellidos = New System.Windows.Forms.Label()
+        Me.LabelOrganizacion = New System.Windows.Forms.Label()
+        Me.LabelTelefono = New System.Windows.Forms.Label()
+        Me.LabelNombre = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.ButtonCancelar = New System.Windows.Forms.Button()
@@ -35,35 +56,14 @@ Partial Class NuevoUsuario
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LabelNombre = New System.Windows.Forms.Label()
-        Me.LabelTelefono = New System.Windows.Forms.Label()
-        Me.LabelOrganizacion = New System.Windows.Forms.Label()
-        Me.LabelApellidos = New System.Windows.Forms.Label()
-        Me.LabelEmail = New System.Windows.Forms.Label()
-        Me.LabelTipo = New System.Windows.Forms.Label()
-        Me.LabelFechaNacimiento = New System.Windows.Forms.Label()
-        Me.LabelDireccion = New System.Windows.Forms.Label()
-        Me.MaskedTextBoxNombre = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBoxTelefono = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBoxOrganizacion = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBoxApellidos = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBoxEmail = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBoxDireccion = New System.Windows.Forms.MaskedTextBox()
-        Me.DateTimePickerFechaNacimiento = New System.Windows.Forms.DateTimePicker()
-        Me.LabelNuevoTipo = New System.Windows.Forms.Label()
-        Me.ComboBoxTipo = New System.Windows.Forms.ComboBox()
-        Me.ButtonAñadirNuevoTipo = New System.Windows.Forms.Button()
-        Me.TextBoxNuevoTipo = New System.Windows.Forms.MaskedTextBox()
-        Me.ButtonAñadirTipo = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel10.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -78,6 +78,197 @@ Partial Class NuevoUsuario
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(933, 201)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.ButtonAñadirTipo)
+        Me.Panel1.Controls.Add(Me.TextBoxNuevoTipo)
+        Me.Panel1.Controls.Add(Me.ButtonAñadirNuevoTipo)
+        Me.Panel1.Controls.Add(Me.ComboBoxTipo)
+        Me.Panel1.Controls.Add(Me.LabelNuevoTipo)
+        Me.Panel1.Controls.Add(Me.DateTimePickerFechaNacimiento)
+        Me.Panel1.Controls.Add(Me.MaskedTextBoxDireccion)
+        Me.Panel1.Controls.Add(Me.MaskedTextBoxEmail)
+        Me.Panel1.Controls.Add(Me.MaskedTextBoxApellidos)
+        Me.Panel1.Controls.Add(Me.MaskedTextBoxOrganizacion)
+        Me.Panel1.Controls.Add(Me.MaskedTextBoxTelefono)
+        Me.Panel1.Controls.Add(Me.MaskedTextBoxNombre)
+        Me.Panel1.Controls.Add(Me.LabelDireccion)
+        Me.Panel1.Controls.Add(Me.LabelFechaNacimiento)
+        Me.Panel1.Controls.Add(Me.LabelTipo)
+        Me.Panel1.Controls.Add(Me.LabelEmail)
+        Me.Panel1.Controls.Add(Me.LabelApellidos)
+        Me.Panel1.Controls.Add(Me.LabelOrganizacion)
+        Me.Panel1.Controls.Add(Me.LabelTelefono)
+        Me.Panel1.Controls.Add(Me.LabelNombre)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(927, 195)
+        Me.Panel1.TabIndex = 0
+        '
+        'ButtonAñadirTipo
+        '
+        Me.ButtonAñadirTipo.Location = New System.Drawing.Point(847, 139)
+        Me.ButtonAñadirTipo.Name = "ButtonAñadirTipo"
+        Me.ButtonAñadirTipo.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonAñadirTipo.TabIndex = 20
+        Me.ButtonAñadirTipo.Text = "Añadir"
+        Me.ButtonAñadirTipo.UseVisualStyleBackColor = True
+        '
+        'TextBoxNuevoTipo
+        '
+        Me.TextBoxNuevoTipo.Location = New System.Drawing.Point(637, 141)
+        Me.TextBoxNuevoTipo.Name = "TextBoxNuevoTipo"
+        Me.TextBoxNuevoTipo.Size = New System.Drawing.Size(203, 22)
+        Me.TextBoxNuevoTipo.TabIndex = 19
+        '
+        'ButtonAñadirNuevoTipo
+        '
+        Me.ButtonAñadirNuevoTipo.Location = New System.Drawing.Point(537, 138)
+        Me.ButtonAñadirNuevoTipo.Name = "ButtonAñadirNuevoTipo"
+        Me.ButtonAñadirNuevoTipo.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonAñadirNuevoTipo.TabIndex = 18
+        Me.ButtonAñadirNuevoTipo.Text = "Añadir"
+        Me.ButtonAñadirNuevoTipo.UseVisualStyleBackColor = True
+        '
+        'ComboBoxTipo
+        '
+        Me.ComboBoxTipo.FormattingEnabled = True
+        Me.ComboBoxTipo.Location = New System.Drawing.Point(374, 137)
+        Me.ComboBoxTipo.Name = "ComboBoxTipo"
+        Me.ComboBoxTipo.Size = New System.Drawing.Size(156, 24)
+        Me.ComboBoxTipo.TabIndex = 17
+        '
+        'LabelNuevoTipo
+        '
+        Me.LabelNuevoTipo.AutoSize = True
+        Me.LabelNuevoTipo.Location = New System.Drawing.Point(634, 121)
+        Me.LabelNuevoTipo.Name = "LabelNuevoTipo"
+        Me.LabelNuevoTipo.Size = New System.Drawing.Size(77, 17)
+        Me.LabelNuevoTipo.TabIndex = 16
+        Me.LabelNuevoTipo.Text = "NuevoTipo"
+        '
+        'DateTimePickerFechaNacimiento
+        '
+        Me.DateTimePickerFechaNacimiento.Location = New System.Drawing.Point(757, 28)
+        Me.DateTimePickerFechaNacimiento.Name = "DateTimePickerFechaNacimiento"
+        Me.DateTimePickerFechaNacimiento.Size = New System.Drawing.Size(161, 22)
+        Me.DateTimePickerFechaNacimiento.TabIndex = 15
+        '
+        'MaskedTextBoxDireccion
+        '
+        Me.MaskedTextBoxDireccion.Location = New System.Drawing.Point(691, 84)
+        Me.MaskedTextBoxDireccion.Name = "MaskedTextBoxDireccion"
+        Me.MaskedTextBoxDireccion.Size = New System.Drawing.Size(224, 22)
+        Me.MaskedTextBoxDireccion.TabIndex = 14
+        '
+        'MaskedTextBoxEmail
+        '
+        Me.MaskedTextBoxEmail.Location = New System.Drawing.Point(385, 84)
+        Me.MaskedTextBoxEmail.Name = "MaskedTextBoxEmail"
+        Me.MaskedTextBoxEmail.Size = New System.Drawing.Size(230, 22)
+        Me.MaskedTextBoxEmail.TabIndex = 12
+        '
+        'MaskedTextBoxApellidos
+        '
+        Me.MaskedTextBoxApellidos.Location = New System.Drawing.Point(403, 29)
+        Me.MaskedTextBoxApellidos.Name = "MaskedTextBoxApellidos"
+        Me.MaskedTextBoxApellidos.Size = New System.Drawing.Size(212, 22)
+        Me.MaskedTextBoxApellidos.TabIndex = 11
+        '
+        'MaskedTextBoxOrganizacion
+        '
+        Me.MaskedTextBoxOrganizacion.Location = New System.Drawing.Point(129, 140)
+        Me.MaskedTextBoxOrganizacion.Name = "MaskedTextBoxOrganizacion"
+        Me.MaskedTextBoxOrganizacion.Size = New System.Drawing.Size(179, 22)
+        Me.MaskedTextBoxOrganizacion.TabIndex = 10
+        '
+        'MaskedTextBoxTelefono
+        '
+        Me.MaskedTextBoxTelefono.Location = New System.Drawing.Point(96, 79)
+        Me.MaskedTextBoxTelefono.Name = "MaskedTextBoxTelefono"
+        Me.MaskedTextBoxTelefono.Size = New System.Drawing.Size(212, 22)
+        Me.MaskedTextBoxTelefono.TabIndex = 9
+        '
+        'MaskedTextBoxNombre
+        '
+        Me.MaskedTextBoxNombre.Location = New System.Drawing.Point(96, 29)
+        Me.MaskedTextBoxNombre.Name = "MaskedTextBoxNombre"
+        Me.MaskedTextBoxNombre.Size = New System.Drawing.Size(212, 22)
+        Me.MaskedTextBoxNombre.TabIndex = 8
+        '
+        'LabelDireccion
+        '
+        Me.LabelDireccion.AutoSize = True
+        Me.LabelDireccion.Location = New System.Drawing.Point(618, 84)
+        Me.LabelDireccion.Name = "LabelDireccion"
+        Me.LabelDireccion.Size = New System.Drawing.Size(67, 17)
+        Me.LabelDireccion.TabIndex = 7
+        Me.LabelDireccion.Text = "Direccion"
+        '
+        'LabelFechaNacimiento
+        '
+        Me.LabelFechaNacimiento.AutoSize = True
+        Me.LabelFechaNacimiento.Location = New System.Drawing.Point(618, 29)
+        Me.LabelFechaNacimiento.Name = "LabelFechaNacimiento"
+        Me.LabelFechaNacimiento.Size = New System.Drawing.Size(141, 17)
+        Me.LabelFechaNacimiento.TabIndex = 6
+        Me.LabelFechaNacimiento.Text = "Fecha de Nacimiento"
+        '
+        'LabelTipo
+        '
+        Me.LabelTipo.AutoSize = True
+        Me.LabelTipo.Location = New System.Drawing.Point(332, 140)
+        Me.LabelTipo.Name = "LabelTipo"
+        Me.LabelTipo.Size = New System.Drawing.Size(36, 17)
+        Me.LabelTipo.TabIndex = 5
+        Me.LabelTipo.Text = "Tipo"
+        '
+        'LabelEmail
+        '
+        Me.LabelEmail.AutoSize = True
+        Me.LabelEmail.Location = New System.Drawing.Point(332, 84)
+        Me.LabelEmail.Name = "LabelEmail"
+        Me.LabelEmail.Size = New System.Drawing.Size(47, 17)
+        Me.LabelEmail.TabIndex = 4
+        Me.LabelEmail.Text = "E-mail"
+        '
+        'LabelApellidos
+        '
+        Me.LabelApellidos.AutoSize = True
+        Me.LabelApellidos.Location = New System.Drawing.Point(332, 29)
+        Me.LabelApellidos.Name = "LabelApellidos"
+        Me.LabelApellidos.Size = New System.Drawing.Size(65, 17)
+        Me.LabelApellidos.TabIndex = 3
+        Me.LabelApellidos.Text = "Apellidos"
+        '
+        'LabelOrganizacion
+        '
+        Me.LabelOrganizacion.AutoSize = True
+        Me.LabelOrganizacion.Location = New System.Drawing.Point(31, 140)
+        Me.LabelOrganizacion.Name = "LabelOrganizacion"
+        Me.LabelOrganizacion.Size = New System.Drawing.Size(92, 17)
+        Me.LabelOrganizacion.TabIndex = 2
+        Me.LabelOrganizacion.Text = "Organización"
+        '
+        'LabelTelefono
+        '
+        Me.LabelTelefono.AutoSize = True
+        Me.LabelTelefono.Location = New System.Drawing.Point(31, 84)
+        Me.LabelTelefono.Name = "LabelTelefono"
+        Me.LabelTelefono.Size = New System.Drawing.Size(64, 17)
+        Me.LabelTelefono.TabIndex = 1
+        Me.LabelTelefono.Text = "Teléfono"
+        '
+        'LabelNombre
+        '
+        Me.LabelNombre.AutoSize = True
+        Me.LabelNombre.Location = New System.Drawing.Point(31, 29)
+        Me.LabelNombre.Name = "LabelNombre"
+        Me.LabelNombre.Size = New System.Drawing.Size(58, 17)
+        Me.LabelNombre.TabIndex = 0
+        Me.LabelNombre.Text = "Nombre"
         '
         'TableLayoutPanel2
         '
@@ -199,197 +390,6 @@ Partial Class NuevoUsuario
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Foto:"
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.ButtonAñadirTipo)
-        Me.Panel1.Controls.Add(Me.TextBoxNuevoTipo)
-        Me.Panel1.Controls.Add(Me.ButtonAñadirNuevoTipo)
-        Me.Panel1.Controls.Add(Me.ComboBoxTipo)
-        Me.Panel1.Controls.Add(Me.LabelNuevoTipo)
-        Me.Panel1.Controls.Add(Me.DateTimePickerFechaNacimiento)
-        Me.Panel1.Controls.Add(Me.MaskedTextBoxDireccion)
-        Me.Panel1.Controls.Add(Me.MaskedTextBoxEmail)
-        Me.Panel1.Controls.Add(Me.MaskedTextBoxApellidos)
-        Me.Panel1.Controls.Add(Me.MaskedTextBoxOrganizacion)
-        Me.Panel1.Controls.Add(Me.MaskedTextBoxTelefono)
-        Me.Panel1.Controls.Add(Me.MaskedTextBoxNombre)
-        Me.Panel1.Controls.Add(Me.LabelDireccion)
-        Me.Panel1.Controls.Add(Me.LabelFechaNacimiento)
-        Me.Panel1.Controls.Add(Me.LabelTipo)
-        Me.Panel1.Controls.Add(Me.LabelEmail)
-        Me.Panel1.Controls.Add(Me.LabelApellidos)
-        Me.Panel1.Controls.Add(Me.LabelOrganizacion)
-        Me.Panel1.Controls.Add(Me.LabelTelefono)
-        Me.Panel1.Controls.Add(Me.LabelNombre)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(927, 195)
-        Me.Panel1.TabIndex = 0
-        '
-        'LabelNombre
-        '
-        Me.LabelNombre.AutoSize = True
-        Me.LabelNombre.Location = New System.Drawing.Point(31, 29)
-        Me.LabelNombre.Name = "LabelNombre"
-        Me.LabelNombre.Size = New System.Drawing.Size(58, 17)
-        Me.LabelNombre.TabIndex = 0
-        Me.LabelNombre.Text = "Nombre"
-        '
-        'LabelTelefono
-        '
-        Me.LabelTelefono.AutoSize = True
-        Me.LabelTelefono.Location = New System.Drawing.Point(31, 84)
-        Me.LabelTelefono.Name = "LabelTelefono"
-        Me.LabelTelefono.Size = New System.Drawing.Size(64, 17)
-        Me.LabelTelefono.TabIndex = 1
-        Me.LabelTelefono.Text = "Teléfono"
-        '
-        'LabelOrganizacion
-        '
-        Me.LabelOrganizacion.AutoSize = True
-        Me.LabelOrganizacion.Location = New System.Drawing.Point(31, 140)
-        Me.LabelOrganizacion.Name = "LabelOrganizacion"
-        Me.LabelOrganizacion.Size = New System.Drawing.Size(92, 17)
-        Me.LabelOrganizacion.TabIndex = 2
-        Me.LabelOrganizacion.Text = "Organización"
-        '
-        'LabelApellidos
-        '
-        Me.LabelApellidos.AutoSize = True
-        Me.LabelApellidos.Location = New System.Drawing.Point(332, 29)
-        Me.LabelApellidos.Name = "LabelApellidos"
-        Me.LabelApellidos.Size = New System.Drawing.Size(65, 17)
-        Me.LabelApellidos.TabIndex = 3
-        Me.LabelApellidos.Text = "Apellidos"
-        '
-        'LabelEmail
-        '
-        Me.LabelEmail.AutoSize = True
-        Me.LabelEmail.Location = New System.Drawing.Point(332, 84)
-        Me.LabelEmail.Name = "LabelEmail"
-        Me.LabelEmail.Size = New System.Drawing.Size(47, 17)
-        Me.LabelEmail.TabIndex = 4
-        Me.LabelEmail.Text = "E-mail"
-        '
-        'LabelTipo
-        '
-        Me.LabelTipo.AutoSize = True
-        Me.LabelTipo.Location = New System.Drawing.Point(332, 140)
-        Me.LabelTipo.Name = "LabelTipo"
-        Me.LabelTipo.Size = New System.Drawing.Size(36, 17)
-        Me.LabelTipo.TabIndex = 5
-        Me.LabelTipo.Text = "Tipo"
-        '
-        'LabelFechaNacimiento
-        '
-        Me.LabelFechaNacimiento.AutoSize = True
-        Me.LabelFechaNacimiento.Location = New System.Drawing.Point(618, 29)
-        Me.LabelFechaNacimiento.Name = "LabelFechaNacimiento"
-        Me.LabelFechaNacimiento.Size = New System.Drawing.Size(141, 17)
-        Me.LabelFechaNacimiento.TabIndex = 6
-        Me.LabelFechaNacimiento.Text = "Fecha de Nacimiento"
-        '
-        'LabelDireccion
-        '
-        Me.LabelDireccion.AutoSize = True
-        Me.LabelDireccion.Location = New System.Drawing.Point(618, 84)
-        Me.LabelDireccion.Name = "LabelDireccion"
-        Me.LabelDireccion.Size = New System.Drawing.Size(67, 17)
-        Me.LabelDireccion.TabIndex = 7
-        Me.LabelDireccion.Text = "Direccion"
-        '
-        'MaskedTextBoxNombre
-        '
-        Me.MaskedTextBoxNombre.Location = New System.Drawing.Point(96, 29)
-        Me.MaskedTextBoxNombre.Name = "MaskedTextBoxNombre"
-        Me.MaskedTextBoxNombre.Size = New System.Drawing.Size(212, 22)
-        Me.MaskedTextBoxNombre.TabIndex = 8
-        '
-        'MaskedTextBoxTelefono
-        '
-        Me.MaskedTextBoxTelefono.Location = New System.Drawing.Point(96, 79)
-        Me.MaskedTextBoxTelefono.Name = "MaskedTextBoxTelefono"
-        Me.MaskedTextBoxTelefono.Size = New System.Drawing.Size(212, 22)
-        Me.MaskedTextBoxTelefono.TabIndex = 9
-        '
-        'MaskedTextBoxOrganizacion
-        '
-        Me.MaskedTextBoxOrganizacion.Location = New System.Drawing.Point(129, 140)
-        Me.MaskedTextBoxOrganizacion.Name = "MaskedTextBoxOrganizacion"
-        Me.MaskedTextBoxOrganizacion.Size = New System.Drawing.Size(179, 22)
-        Me.MaskedTextBoxOrganizacion.TabIndex = 10
-        '
-        'MaskedTextBoxApellidos
-        '
-        Me.MaskedTextBoxApellidos.Location = New System.Drawing.Point(403, 29)
-        Me.MaskedTextBoxApellidos.Name = "MaskedTextBoxApellidos"
-        Me.MaskedTextBoxApellidos.Size = New System.Drawing.Size(212, 22)
-        Me.MaskedTextBoxApellidos.TabIndex = 11
-        '
-        'MaskedTextBoxEmail
-        '
-        Me.MaskedTextBoxEmail.Location = New System.Drawing.Point(385, 84)
-        Me.MaskedTextBoxEmail.Name = "MaskedTextBoxEmail"
-        Me.MaskedTextBoxEmail.Size = New System.Drawing.Size(230, 22)
-        Me.MaskedTextBoxEmail.TabIndex = 12
-        '
-        'MaskedTextBoxDireccion
-        '
-        Me.MaskedTextBoxDireccion.Location = New System.Drawing.Point(691, 84)
-        Me.MaskedTextBoxDireccion.Name = "MaskedTextBoxDireccion"
-        Me.MaskedTextBoxDireccion.Size = New System.Drawing.Size(224, 22)
-        Me.MaskedTextBoxDireccion.TabIndex = 14
-        '
-        'DateTimePickerFechaNacimiento
-        '
-        Me.DateTimePickerFechaNacimiento.Location = New System.Drawing.Point(757, 28)
-        Me.DateTimePickerFechaNacimiento.Name = "DateTimePickerFechaNacimiento"
-        Me.DateTimePickerFechaNacimiento.Size = New System.Drawing.Size(161, 22)
-        Me.DateTimePickerFechaNacimiento.TabIndex = 15
-        '
-        'LabelNuevoTipo
-        '
-        Me.LabelNuevoTipo.AutoSize = True
-        Me.LabelNuevoTipo.Location = New System.Drawing.Point(634, 121)
-        Me.LabelNuevoTipo.Name = "LabelNuevoTipo"
-        Me.LabelNuevoTipo.Size = New System.Drawing.Size(77, 17)
-        Me.LabelNuevoTipo.TabIndex = 16
-        Me.LabelNuevoTipo.Text = "NuevoTipo"
-        '
-        'ComboBoxTipo
-        '
-        Me.ComboBoxTipo.FormattingEnabled = True
-        Me.ComboBoxTipo.Location = New System.Drawing.Point(374, 137)
-        Me.ComboBoxTipo.Name = "ComboBoxTipo"
-        Me.ComboBoxTipo.Size = New System.Drawing.Size(156, 24)
-        Me.ComboBoxTipo.TabIndex = 17
-        '
-        'ButtonAñadirNuevoTipo
-        '
-        Me.ButtonAñadirNuevoTipo.Location = New System.Drawing.Point(537, 138)
-        Me.ButtonAñadirNuevoTipo.Name = "ButtonAñadirNuevoTipo"
-        Me.ButtonAñadirNuevoTipo.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonAñadirNuevoTipo.TabIndex = 18
-        Me.ButtonAñadirNuevoTipo.Text = "Añadir"
-        Me.ButtonAñadirNuevoTipo.UseVisualStyleBackColor = True
-        '
-        'TextBoxNuevoTipo
-        '
-        Me.TextBoxNuevoTipo.Location = New System.Drawing.Point(637, 141)
-        Me.TextBoxNuevoTipo.Name = "TextBoxNuevoTipo"
-        Me.TextBoxNuevoTipo.Size = New System.Drawing.Size(203, 22)
-        Me.TextBoxNuevoTipo.TabIndex = 19
-        '
-        'ButtonAñadirTipo
-        '
-        Me.ButtonAñadirTipo.Location = New System.Drawing.Point(847, 139)
-        Me.ButtonAñadirTipo.Name = "ButtonAñadirTipo"
-        Me.ButtonAñadirTipo.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonAñadirTipo.TabIndex = 20
-        Me.ButtonAñadirTipo.Text = "Añadir"
-        Me.ButtonAñadirTipo.UseVisualStyleBackColor = True
-        '
         'NuevoUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -401,6 +401,8 @@ Partial Class NuevoUsuario
         Me.Name = "NuevoUsuario"
         Me.Text = "FabLab - Nuevo usuario"
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.Panel12.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
@@ -409,8 +411,6 @@ Partial Class NuevoUsuario
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

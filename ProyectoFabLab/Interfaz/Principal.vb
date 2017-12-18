@@ -2,6 +2,7 @@
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Inicializar statusStrip
         ToolStripStatusLabel2.Text = "Máquinas: " & NumeroMaquinas().ToString()
+        ToolStripStatusLabel1.Text = "Usuarios: " & Usuarios.CargarUsuarios().Rows.Count
     End Sub
 
     Private Sub NuevaMáquinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaMáquinaToolStripMenuItem.Click
