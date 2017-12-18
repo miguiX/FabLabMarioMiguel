@@ -33,6 +33,9 @@ Public Class GatewayMaquinas
         Dim consulta As String
         Dim fecha_compra As String = fecha.Year & "-" & fecha.Month & "-" & fecha.Day
         'Validamos los datos
+        If fecha = DateTime.MinValue Then
+            Throw New ArgumentException("La fecha de compra no puede estar vacía")
+        End If
         If modelo = "" Or modelo Is Nothing Then
             Throw New ArgumentException("El modelo no puede estar vacío")
         End If
@@ -48,16 +51,6 @@ Public Class GatewayMaquinas
         If tipo = Nothing Then
             Throw New ArgumentException("El tipo no puede estar vacío")
         End If
-        'Comprobamos que el numero de telefono sea correcto en caso de que se escriba
-        If Not (telefono_sat = "" Or telefono_sat = Nothing) Then
-
-            Dim er As New System.Text.RegularExpressions.Regex("[0-9]{9}")
-            If Not er.IsMatch(telefono_sat) Then
-                Throw New ArgumentException("El teléfono debe contener 9 dígitos")
-            End If
-
-        End If
-
         'Metemos los parámetros en el comando
         comando.Parameters.Add("@modelo", SqlDbType.VarChar)
         comando.Parameters("@modelo").Value = modelo

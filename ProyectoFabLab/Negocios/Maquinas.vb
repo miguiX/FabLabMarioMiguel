@@ -2,7 +2,12 @@
     Public Sub InsertarMaquina(modelo As String, precio_hora As Double, fecha_compra As Date, telefono_sat As String, tipo As Integer, descripcion As String, caracteristicas As String)
 
         Dim gateway As New GatewayMaquinas(My.Settings.cadenaConexion)
+        Dim er As New System.Text.RegularExpressions.Regex("[0-9]{9}")
 
+        If Not er.IsMatch(telefono_sat) Then
+            Throw New ArgumentException("El teléfono debe contener 9 dígitos")
+
+        End If
         If ExisteModeloFecha(modelo, fecha_compra) Then
             Throw New ApplicationException("No puedes repetir dos modelos con la misma fecha de compra")
         ElseIf (precio_hora <= 0) Then
@@ -23,6 +28,11 @@
 
     Public Sub ActualizarMaquina(id As Integer, modelo As String, precio_hora As Double, fecha_compra As Date, telefono_sat As String, tipo As Integer, descripcion As String, caracteristicas As String)
         Dim gateway As New GatewayMaquinas(My.Settings.cadenaConexion)
+        Dim er As New System.Text.RegularExpressions.Regex("[0-9]{9}")
+
+        If Not er.IsMatch(telefono_sat) Then
+            Throw New ArgumentException("El teléfono debe contener 9 dígitos")
+        End If
 
         If ExisteModeloFecha(modelo, fecha_compra) Then
             Throw New ApplicationException("No puedes repetir dos modelos con la misma fecha de compra")

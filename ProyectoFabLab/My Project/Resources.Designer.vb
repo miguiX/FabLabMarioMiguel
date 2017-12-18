@@ -61,12 +61,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         '''</summary>
-        Friend ReadOnly Property Fab_Lab_logo_png() As System.Drawing.Bitmap
+        Friend ReadOnly Property Fab_Lab_logo_png() As System.Drawing.Icon
             Get
-                Dim obj As Object = ResourceManager.GetObject("Fab_Lab_logo.png", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Dim obj As Object = ResourceManager.GetObject("Fab_Lab_logo_png", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
             End Get
         End Property
         
@@ -96,6 +96,16 @@ Namespace My.Resources
         Friend ReadOnly Property Icons8_Windows_8_Printing_Cnc_Machine() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Icons8-Windows-8-Printing-Cnc-Machine", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property logo_png() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logo.png", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

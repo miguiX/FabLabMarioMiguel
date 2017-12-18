@@ -1,9 +1,13 @@
 ﻿Public Class Principal
+    Public gestionMaquinas As GestionMaquinas
+    Private CargarNuevoUsuario As String
+
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Inicializar statusStrip
-        GestionMaquinas = New GestionMaquinas()
         ToolStripStatusLabel2.Text = "Máquinas: " & NumeroMaquinas().ToString()
         ToolStripStatusLabel1.Text = "Usuarios: " & Usuarios.CargarUsuarios().Rows.Count
+
+        Me.WindowState = WindowState.Maximized
     End Sub
 
     Private Sub NuevaMáquinaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaMáquinaToolStripMenuItem.Click
@@ -14,6 +18,7 @@
     End Sub
 
     Private Sub GestiónDeMáquinasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestiónDeMáquinasToolStripMenuItem.Click
+        gestionMaquinas = New GestionMaquinas()
         gestionMaquinas.MdiParent = Me
         gestionMaquinas.Show()
     End Sub
@@ -87,5 +92,11 @@
         nuevaMaquina.MdiParent = Me
         nuevaMaquina.Text = "FabLab - Nueva Máquina"
         nuevaMaquina.Show()
+    End Sub
+
+    Private Sub CerrarTodasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarTodasToolStripMenuItem.Click
+        For Each form As Form In Me.MdiChildren
+            form.Close()
+        Next
     End Sub
 End Class

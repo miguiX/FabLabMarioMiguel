@@ -15,6 +15,7 @@
         editando = False
         DesactivarCampos()
         CargarMaquina(id)
+        ButtonCancelar.Select()
         Me.Show()
     End Sub
 
@@ -52,7 +53,12 @@
         Else
             Try
                 Maquinas.InsertarMaquina(TextBoxModelo.Text, Convert.ToDouble(TextBoxPrecio_hora.Text), DateTimePicker1.Value, TextBoxTelefono_sat.Text, Maquinas.ObtenerIdTipoMaquinaPorTipo(ComboBox1.Text), TextBoxDescripcion.Text, TextBoxCaracteristicas.Text)
-                DirectCast(Me.MdiParent, Principal).gestionMaquinas.ActualizarGrid()
+                'DirectCast(Me.MdiParent, Principal).gestionMaquinas.ActualizarGrid()
+                For Each formulario As Form In Me.MdiParent.MdiChildren
+                    If TypeOf formulario Is GestionMaquinas Then
+                        DirectCast(formulario, GestionMaquinas).ActualizarGrid()
+                    End If
+                Next
                 MessageBox.Show("Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -86,6 +92,17 @@
         ComboBox1.Enabled = False
         Button1.Enabled = False
         ButtonAceptar.Visible = False
+        ButtonExaminar.Visible = False
+    End Sub
+
+    Public Sub ResetearCampos()
+        TextBoxCaracteristicas.Text = ""
+        TextBoxDescripcion.Text = ""
+        TextBoxModelo.Text = ""
+        TextBoxPrecio_hora.Text = ""
+        TextBoxTelefono_sat.Text = ""
+        ComboBox1.Text = ""
+        DateTimePicker1.ResetText()
     End Sub
 
     Private Sub CargarMaquina(id As Integer)

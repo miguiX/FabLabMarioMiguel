@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Proyecto FabLab")>
 <Assembly: AssemblyDescription("Aplicación para gestionar cualquier FabLab")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("Mario and Miguel's company")>
 <Assembly: AssemblyProduct("ProyectoFabLab")>
 <Assembly: AssemblyCopyright("Copyright ©  2017")>
 <Assembly: AssemblyTrademark("")>

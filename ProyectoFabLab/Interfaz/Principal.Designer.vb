@@ -22,6 +22,7 @@ Partial Class Principal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,6 +47,7 @@ Partial Class Principal
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.CerrarTodasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -58,8 +60,8 @@ Partial Class Principal
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.MdiWindowListItem = Me.VentanaToolStripMenuItem
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1033, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(775, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -67,103 +69,103 @@ Partial Class Principal
         '
         Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoUsuarioToolStripMenuItem, Me.GestionDeUsuariosToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(77, 24)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'NuevoUsuarioToolStripMenuItem
         '
         Me.NuevoUsuarioToolStripMenuItem.Name = "NuevoUsuarioToolStripMenuItem"
-        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(213, 26)
-        Me.NuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario"
+        Me.NuevoUsuarioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.NuevoUsuarioToolStripMenuItem.Text = "&Nuevo usuario"
         '
         'GestionDeUsuariosToolStripMenuItem
         '
         Me.GestionDeUsuariosToolStripMenuItem.Name = "GestionDeUsuariosToolStripMenuItem"
-        Me.GestionDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(213, 26)
-        Me.GestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios"
+        Me.GestionDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.GestionDeUsuariosToolStripMenuItem.Text = "&Gestion de usuarios"
         '
         'MaquinasToolStripMenuItem
         '
         Me.MaquinasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaMáquinaToolStripMenuItem, Me.GestiónDeMáquinasToolStripMenuItem})
         Me.MaquinasToolStripMenuItem.Name = "MaquinasToolStripMenuItem"
-        Me.MaquinasToolStripMenuItem.Size = New System.Drawing.Size(85, 24)
+        Me.MaquinasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.MaquinasToolStripMenuItem.Text = "Maquinas"
         '
         'NuevaMáquinaToolStripMenuItem
         '
         Me.NuevaMáquinaToolStripMenuItem.Name = "NuevaMáquinaToolStripMenuItem"
-        Me.NuevaMáquinaToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
-        Me.NuevaMáquinaToolStripMenuItem.Text = "Nueva máquina"
+        Me.NuevaMáquinaToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.NuevaMáquinaToolStripMenuItem.Text = "&Nueva máquina"
         '
         'GestiónDeMáquinasToolStripMenuItem
         '
         Me.GestiónDeMáquinasToolStripMenuItem.Name = "GestiónDeMáquinasToolStripMenuItem"
-        Me.GestiónDeMáquinasToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
-        Me.GestiónDeMáquinasToolStripMenuItem.Text = "Gestión de máquinas"
+        Me.GestiónDeMáquinasToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.GestiónDeMáquinasToolStripMenuItem.Text = "&Gestión de máquinas"
         '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(79, 24)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'VentanaToolStripMenuItem
         '
-        Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem, Me.ToolStripSeparator1})
+        Me.VentanaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrganizarVentanasToolStripMenuItem, Me.MinimizarTodasToolStripMenuItem, Me.ToolStripSeparator1, Me.CerrarTodasToolStripMenuItem})
         Me.VentanaToolStripMenuItem.Name = "VentanaToolStripMenuItem"
-        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
+        Me.VentanaToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.VentanaToolStripMenuItem.Text = "Ventana"
         '
         'OrganizarVentanasToolStripMenuItem
         '
         Me.OrganizarVentanasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HorizontalToolStripMenuItem, Me.VerticalToolStripMenuItem})
         Me.OrganizarVentanasToolStripMenuItem.Name = "OrganizarVentanasToolStripMenuItem"
-        Me.OrganizarVentanasToolStripMenuItem.Size = New System.Drawing.Size(211, 26)
-        Me.OrganizarVentanasToolStripMenuItem.Text = "Organizar ventanas"
+        Me.OrganizarVentanasToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.OrganizarVentanasToolStripMenuItem.Text = "&Organizar ventanas"
         '
         'HorizontalToolStripMenuItem
         '
         Me.HorizontalToolStripMenuItem.Name = "HorizontalToolStripMenuItem"
-        Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(154, 26)
+        Me.HorizontalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.HorizontalToolStripMenuItem.Text = "Horizontal"
         '
         'VerticalToolStripMenuItem
         '
         Me.VerticalToolStripMenuItem.Name = "VerticalToolStripMenuItem"
-        Me.VerticalToolStripMenuItem.Size = New System.Drawing.Size(154, 26)
+        Me.VerticalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VerticalToolStripMenuItem.Text = "Vertical"
         '
         'MinimizarTodasToolStripMenuItem
         '
         Me.MinimizarTodasToolStripMenuItem.Name = "MinimizarTodasToolStripMenuItem"
-        Me.MinimizarTodasToolStripMenuItem.Size = New System.Drawing.Size(211, 26)
-        Me.MinimizarTodasToolStripMenuItem.Text = "Minimizar todas"
+        Me.MinimizarTodasToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.MinimizarTodasToolStripMenuItem.Text = "&Minimizar todas"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(208, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(172, 6)
         '
         'AyudaToolStripMenuItem
         '
         Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem})
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
         Me.AyudaToolStripMenuItem.Text = "Ayuda"
         '
         'AcercaDeToolStripMenuItem
         '
         Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
-        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(150, 26)
-        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AcercaDeToolStripMenuItem.Text = "&Acerca de"
         '
         'ToolStrip1
         '
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButtonGestionUsuarios, Me.ToolStripButtonNuevoUsuario, Me.ToolStripButtonGestionMaquinas, Me.ToolStripButtonNuevaMaquina})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 28)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1033, 27)
+        Me.ToolStrip1.Size = New System.Drawing.Size(775, 27)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -174,7 +176,7 @@ Partial Class Principal
         Me.ToolStripButtonGestionUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButtonGestionUsuarios.Name = "ToolStripButtonGestionUsuarios"
         Me.ToolStripButtonGestionUsuarios.Size = New System.Drawing.Size(24, 24)
-        Me.ToolStripButtonGestionUsuarios.Text = "ToolStripButton"
+        Me.ToolStripButtonGestionUsuarios.Text = "Gestión Usuarios"
         '
         'ToolStripButtonNuevoUsuario
         '
@@ -183,7 +185,7 @@ Partial Class Principal
         Me.ToolStripButtonNuevoUsuario.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButtonNuevoUsuario.Name = "ToolStripButtonNuevoUsuario"
         Me.ToolStripButtonNuevoUsuario.Size = New System.Drawing.Size(24, 24)
-        Me.ToolStripButtonNuevoUsuario.Text = "ToolStripButton2"
+        Me.ToolStripButtonNuevoUsuario.Text = "Nuevo Usuario"
         '
         'ToolStripButtonGestionMaquinas
         '
@@ -192,7 +194,7 @@ Partial Class Principal
         Me.ToolStripButtonGestionMaquinas.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButtonGestionMaquinas.Name = "ToolStripButtonGestionMaquinas"
         Me.ToolStripButtonGestionMaquinas.Size = New System.Drawing.Size(24, 24)
-        Me.ToolStripButtonGestionMaquinas.Text = "ToolStripButton3"
+        Me.ToolStripButtonGestionMaquinas.Text = "Gestión Máquinas"
         '
         'ToolStripButtonNuevaMaquina
         '
@@ -201,42 +203,49 @@ Partial Class Principal
         Me.ToolStripButtonNuevaMaquina.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButtonNuevaMaquina.Name = "ToolStripButtonNuevaMaquina"
         Me.ToolStripButtonNuevaMaquina.Size = New System.Drawing.Size(24, 24)
-        Me.ToolStripButtonNuevaMaquina.Text = "ToolStripButton4"
+        Me.ToolStripButtonNuevaMaquina.Text = "Nueva Máquina"
         '
         'StatusStrip1
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 430)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 348)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 13, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1033, 25)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 10, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(775, 22)
         Me.StatusStrip1.TabIndex = 4
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(153, 20)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(121, 17)
         Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
         '
         'ToolStripStatusLabel2
         '
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(153, 20)
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(121, 17)
         Me.ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        '
+        'CerrarTodasToolStripMenuItem
+        '
+        Me.CerrarTodasToolStripMenuItem.Name = "CerrarTodasToolStripMenuItem"
+        Me.CerrarTodasToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.CerrarTodasToolStripMenuItem.Text = "&Cerrar todas"
         '
         'Principal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1033, 455)
+        Me.ClientSize = New System.Drawing.Size(775, 370)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Principal"
         Me.Text = "FabLab - Ventana Principal"
         Me.MenuStrip1.ResumeLayout(False)
@@ -274,4 +283,5 @@ Partial Class Principal
     Friend WithEvents ToolStripButtonNuevoUsuario As ToolStripButton
     Friend WithEvents ToolStripButtonGestionMaquinas As ToolStripButton
     Friend WithEvents ToolStripButtonNuevaMaquina As ToolStripButton
+    Friend WithEvents CerrarTodasToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -40,17 +40,17 @@ Partial Class FormularioMaquina
         Me.ButtonAceptar = New System.Windows.Forms.Button()
         Me.FlowLayoutPanelImagenes = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBoxPrecio_hora = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxModelo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBoxPrecio_hora = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBoxTelefono_sat = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -271,6 +271,54 @@ Partial Class FormularioMaquina
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(782, 66)
         Me.TableLayoutPanel4.TabIndex = 3
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Location = New System.Drawing.Point(384, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(90, 26)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Fecha de compra"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(257, 29)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Location = New System.Drawing.Point(188, 26)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(63, 40)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Tipo"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'TextBoxPrecio_hora
+        '
+        Me.TextBoxPrecio_hora.Location = New System.Drawing.Point(257, 3)
+        Me.TextBoxPrecio_hora.Name = "TextBoxPrecio_hora"
+        Me.TextBoxPrecio_hora.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxPrecio_hora.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(73, 26)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Modelo"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'TextBoxModelo
         '
         Me.TextBoxModelo.Location = New System.Drawing.Point(82, 3)
@@ -299,38 +347,19 @@ Partial Class FormularioMaquina
         Me.Label3.Text = "Precio/hora"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBoxPrecio_hora
-        '
-        Me.TextBoxPrecio_hora.Location = New System.Drawing.Point(257, 3)
-        Me.TextBoxPrecio_hora.Name = "TextBoxPrecio_hora"
-        Me.TextBoxPrecio_hora.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxPrecio_hora.TabIndex = 2
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Location = New System.Drawing.Point(188, 26)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(63, 40)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Tipo"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(257, 29)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 4
-        '
         'TextBoxTelefono_sat
         '
         Me.TextBoxTelefono_sat.Location = New System.Drawing.Point(82, 29)
         Me.TextBoxTelefono_sat.Name = "TextBoxTelefono_sat"
         Me.TextBoxTelefono_sat.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxTelefono_sat.TabIndex = 1
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(480, 3)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 7
         '
         'Button1
         '
@@ -347,41 +376,13 @@ Partial Class FormularioMaquina
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label5.Location = New System.Drawing.Point(384, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(90, 26)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Fecha de compra"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(480, 3)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 7
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 26)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Modelo"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
         'FormularioMaquina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(788, 445)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormularioMaquina"
         Me.Text = "FormularioMaquina"
         Me.TableLayoutPanel1.ResumeLayout(False)

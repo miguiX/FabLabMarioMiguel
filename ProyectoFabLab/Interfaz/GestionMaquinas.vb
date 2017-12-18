@@ -49,7 +49,13 @@
     End Sub
 
     Public Sub EliminarMaquina()
-        Maquinas.EliminarMaquina(idSeleccionado())
+        Try
+            Maquinas.EliminarMaquina(idSeleccionado())
+            MessageBox.Show("Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
         ActualizarGrid()
     End Sub
 
