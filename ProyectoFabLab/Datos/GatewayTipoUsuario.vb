@@ -3,13 +3,19 @@
 Public Class GatewayTipoUsuario
     Dim conexion As SqlConnection
     Dim comando As New SqlCommand
-
+    ''' <summary>
+    ''' Conecta el programa con la base de datos
+    ''' </summary>
     Public Sub New(ByRef cadenaConexion As String)
         conexion = New SqlConnection(cadenaConexion)
         comando = New SqlCommand
         comando.Connection = conexion
     End Sub
 
+    ''' <summary>
+    ''' Inserta un tipo en la tabla de tipos
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Insertar(tipo As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
@@ -34,6 +40,10 @@ Public Class GatewayTipoUsuario
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Actualiza un tipo
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Actualizar(id As Integer, tipo As String) As Integer
         Dim filas As Integer
         Dim Consulta As String
@@ -59,6 +69,10 @@ Public Class GatewayTipoUsuario
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Permite eliminar un tipo de la base de datos
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Eliminar(id As Integer) As Integer
         Dim filas As Integer
         Dim consulta As String = String.Format("DELETE FROM TiposUsuario WHERE id={0}", id)
@@ -82,6 +96,10 @@ Public Class GatewayTipoUsuario
         Return filas
     End Function
 
+    ''' <summary>
+    ''' Permite mostrar todos los tipos
+    ''' </summary>
+    ''' <returns></returns>
     Public Function SeleccionarTodo() As DataTable
         Dim Consulta As String
         Dim todo As New DataTable

@@ -8,5 +8,8 @@
     <Setting Name="cadenaConexion" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FabLab;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False</Value>
     </Setting>
+    <Setting Name="CarpetaImagenes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ImagenesUsuario\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
