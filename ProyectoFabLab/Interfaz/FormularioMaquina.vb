@@ -118,25 +118,26 @@ Public Class FormularioMaquina
         TextBoxCaracteristicas.Text = table.Rows(0).Item(7).ToString
     End Sub
 
-    Private Sub ButtonExaminar_Click(sender As Object, e As EventArgs) Handles ButtonExaminar.Click
-        Dim rutaImagen = ObtenerRutaImagen()
+    Private Sub ObtenerThumbNail(ruta As String)
 
-        If Not rutaImagen = "" Then
-            ObtenerThumbNail(rutaImagen)
-        End If
-    End Sub
-    Private Function ObtenerThumbNail(ruta As String) As Byte()
         Dim subscriptionKey As String = My.Settings.claveAPI
         Dim visionClient As IVisionServiceClient
-        visionClient = New VisionServiceClient(subscriptionKey)
-        ObtenerThumbNail(ruta)
         Dim originalPicture As String = ruta
         Dim width As Integer = 200
         Dim height As Integer = 100
         Dim smartCropping As Boolean = True
         Dim thumbnailResult As Byte() = Nothing
+
+
+        visionClient = New VisionServiceClient(subscriptionKey, My.Settings.URL)
+
         thumbnailResult = visionClient.GetThumbnailAsync(originalPicture, width, height, smartCropping).Result
-    End Function
+
+
+        Using binaryWrite = New BinaryWriter(New FileStream(ObtenerNombrePath(CType(Maquinas.ObtenerProximoId, String), ruta.Split(CType(".", Char())).Last()), FileMode.Create, FileAccess.Write))
+            binaryWrite.Write(thumbnailResult)
+        End Using
+    End Sub
     Private Function ObtenerRutaImagen() As String
 
         Dim openFileDialog1 As New OpenFileDialog()
