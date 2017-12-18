@@ -1,4 +1,7 @@
-﻿Public Class FormularioMaquina
+﻿Imports System.IO
+Imports Microsoft.ProjectOxford.Vision
+Public Class FormularioMaquina
+
     Private editando As Boolean
     Private idEditando As Integer
     Public Sub Editar(id As Integer)
@@ -45,7 +48,6 @@
         If editando Then
             Try
                 Maquinas.ActualizarMaquina(idEditando, TextBoxModelo.Text, CDbl(TextBoxPrecio_hora.Text), DateTimePicker1.Value, TextBoxTelefono_sat.Text, Maquinas.ObtenerIdTipoMaquinaPorTipo(ComboBox1.Text), TextBoxDescripcion.Text, TextBoxCaracteristicas.Text)
-                DirectCast(Me.MdiParent, Principal).gestionMaquinas.ActualizarGrid()
                 MessageBox.Show("Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -54,17 +56,17 @@
             Try
                 Maquinas.InsertarMaquina(TextBoxModelo.Text, Convert.ToDouble(TextBoxPrecio_hora.Text), DateTimePicker1.Value, TextBoxTelefono_sat.Text, Maquinas.ObtenerIdTipoMaquinaPorTipo(ComboBox1.Text), TextBoxDescripcion.Text, TextBoxCaracteristicas.Text)
                 'DirectCast(Me.MdiParent, Principal).gestionMaquinas.ActualizarGrid()
-                For Each formulario As Form In Me.MdiParent.MdiChildren
-                    If TypeOf formulario Is GestionMaquinas Then
-                        DirectCast(formulario, GestionMaquinas).ActualizarGrid()
-                    End If
-                Next
                 MessageBox.Show("Éxito", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-
         End If
+
+        For Each formulario As Form In Me.MdiParent.MdiChildren
+            If TypeOf formulario Is GestionMaquinas Then
+                DirectCast(formulario, GestionMaquinas).ActualizarGrid()
+            End If
+        Next
     End Sub
 
     Private Sub ButtonCancelar_Click(sender As Object, e As EventArgs) Handles ButtonCancelar.Click
@@ -115,4 +117,54 @@
         TextBoxDescripcion.Text = table.Rows(0).Item(6).ToString
         TextBoxCaracteristicas.Text = table.Rows(0).Item(7).ToString
     End Sub
+
+    Private Sub ButtonExaminar_Click(sender As Object, e As EventArgs) Handles ButtonExaminar.Click
+        Dim rutaImagen = ObtenerRutaImagen()
+
+        If Not rutaImagen = "" Then
+            ObtenerThumbNail(rutaImagen)
+        End If
+    End Sub
+    Private Function ObtenerThumbNail(ruta As String) As Byte()
+        Dim subscriptionKey As String = My.Settings.claveAPI
+        Dim visionClient As IVisionServiceClient
+        visionClient = New VisionServiceClient(subscriptionKey)
+        ObtenerThumbNail(ruta)
+        Dim originalPicture As String = ruta
+        Dim width As Integer = 200
+        Dim height As Integer = 100
+        Dim smartCropping As Boolean = True
+        Dim thumbnailResult As Byte() = Nothing
+        thumbnailResult = visionClient.GetThumbnailAsync(originalPicture, width, height, smartCropping).Result
+    End Function
+    Private Function ObtenerRutaImagen() As String
+
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*"
+        openFileDialog1.Title = "Selecciona una imágen"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            ' Assign the cursor in the Stream to the Form's Cursor property.
+            Return openFileDialog1.FileName
+        End If
+        Return ""
+    End Function
+    Private Function ObtenerNombrePath(id As String, extension As String) As String
+        Dim nombre As String = ""
+        Dim path As String = My.Settings.carpetaImagenesMaquinas
+        Dim existeCarpeta As Boolean = False
+
+        For Each nombres As String In Directory.GetDirectories(path)
+            If nombres.ToString = id Then
+                existeCarpeta = True
+            End If
+            Exit For
+        Next
+        If existeCarpeta Then
+            Return (path) & "\" & id & "\" & ((Directory.GetFiles(path & "\" & id).Count) + 1) & "." & extension
+        Else
+            Directory.CreateDirectory(path & "\" & id)
+            Return ObtenerNombrePath(id, extension)
+        End If
+        Return nombre
+    End Function
 End Class

@@ -88,6 +88,33 @@ Namespace My
                 Me("CarpetaImagenes") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute(".\imagenes\maquinas")>  _
+        Public ReadOnly Property carpetaImagenesMaquinas() As String
+            Get
+                Return CType(Me("carpetaImagenesMaquinas"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("a0053553803545c09c9db52f76427c8f")>  _
+        Public ReadOnly Property claveAPI() As String
+            Get
+                Return CType(Me("claveAPI"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://westcentralus.api.cognitive.microsoft.com/vision/v1.0")>  _
+        Public ReadOnly Property URL() As String
+            Get
+                Return CType(Me("URL"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

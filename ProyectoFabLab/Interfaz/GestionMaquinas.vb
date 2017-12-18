@@ -4,7 +4,12 @@
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        DataGridView1.DataSource = ObtenerMaquinas(TextBox1.Text)
+        Try
+            DataGridView1.DataSource = ObtenerMaquinas(TextBox1.Text)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonNuevaMaquina.Click, ButtonConsultarMaquina.Click, ButtonEliminarMaquina.Click, ButtonEditarMaquina.Click
@@ -26,8 +31,13 @@
     End Sub
 
     Public Sub ActualizarGrid()
-        DataGridView1.DataSource = ObtenerMaquinas("")
-        DataGridView1.Columns(0).Visible = False
+        Try
+            DataGridView1.DataSource = ObtenerMaquinas("")
+            DataGridView1.Columns(0).Visible = False
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Public Sub NuevaMaquina()
@@ -76,7 +86,5 @@
             End Try
         End Try
     End Function
-
-
 
 End Class

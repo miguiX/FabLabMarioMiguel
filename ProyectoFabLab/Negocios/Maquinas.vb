@@ -18,7 +18,11 @@
 
     End Sub
 
+    Public Function ObtenerProximoId() As Integer
+        Dim gateway As New GatewayMaquinas(My.Settings.cadenaConexion)
 
+        Return (gateway.ObtenerUltimoId()) + 1
+    End Function
 
     Public Function ObtenerMaquinas(modelo As String) As DataTable
         Dim gateway As New GatewayMaquinas(My.Settings.cadenaConexion)

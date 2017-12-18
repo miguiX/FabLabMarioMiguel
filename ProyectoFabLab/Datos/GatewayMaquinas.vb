@@ -307,6 +307,7 @@ Public Class GatewayMaquinas
         Return resultado
 
     End Function
+
     Public Function SeleccionarPorId(id As Integer) As DataTable
         Dim consulta As String = ""
         Dim resultado As New DataTable
@@ -335,5 +336,22 @@ Public Class GatewayMaquinas
         End Try
         Return resultado
 
+    End Function
+    Public Function ObtenerUltimoId() As Integer
+        Dim consulta As String = "select IDENT_CURRENT('Maquinas')"
+        Dim id As Integer
+        'Ejecutamos la consulta
+        Try
+            conexion.Open()
+            comando.CommandText = consulta
+            id = CInt(comando.ExecuteScalar)
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        Finally
+            If (conexion IsNot Nothing) Then
+                conexion.Close()
+            End If
+        End Try
+        Return id
     End Function
 End Class
