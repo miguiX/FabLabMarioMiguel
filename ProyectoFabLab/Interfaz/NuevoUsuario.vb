@@ -1,5 +1,9 @@
-﻿Public Class NuevoUsuario
+﻿Imports System.Text.RegularExpressions
+
+Public Class NuevoUsuario
     Dim Tipos As List(Of String)
+    Dim ErrorTextBox As New ErrorProvider
+    Dim confirmarEmail As New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
     Public Cargar As String
     Public id As Integer
     Public Nombre As String
@@ -90,5 +94,45 @@
         If MessageBox.Show("¿Esta seguro que desea cerrar la ventana?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = 7 Then
             e.Cancel = True
         End If
+    End Sub
+
+    Private Sub MaskedTextBoxNombre_Validated(sender As Object, e As EventArgs) Handles MaskedTextBoxNombre.Validated
+        If MaskedTextBoxNombre.Text = "" Then
+            ErrorTextBox.SetError(MaskedTextBoxNombre, "Introduce algun nombre")
+        End If
+    End Sub
+
+    Private Sub MaskedTextBoxNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaskedTextBoxNombre.Validating
+        ErrorTextBox.SetError(MaskedTextBoxNombre, "")
+    End Sub
+
+    Private Sub MaskedTextBoxApellidos_Validated(sender As Object, e As EventArgs) Handles MaskedTextBoxApellidos.Validated
+        If MaskedTextBoxApellidos.Text = "" Then
+            ErrorTextBox.SetError(MaskedTextBoxApellidos, "Introduce algun apellido")
+        End If
+    End Sub
+
+    Private Sub MaskedTextBoxApellidos_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaskedTextBoxApellidos.Validating
+        ErrorTextBox.SetError(MaskedTextBoxApellidos, "")
+    End Sub
+
+    Private Sub MaskedTextBoxOrganizacion_Validated(sender As Object, e As EventArgs) Handles MaskedTextBoxOrganizacion.Validated
+        If ComboBoxTipo.Text = "Profesional" Or ComboBoxTipo.Text = "Investigador" Then
+            ErrorTextBox.SetError(MaskedTextBoxOrganizacion, "Introduce una organizacion ya que el usuario es Profesional o Investigador")
+        End If
+    End Sub
+
+    Private Sub MaskedTextBoxOrganizacion_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaskedTextBoxOrganizacion.Validating
+        ErrorTextBox.SetError(MaskedTextBoxOrganizacion, "")
+    End Sub
+
+    Private Sub MaskedTextBoxEmail_Validated(sender As Object, e As EventArgs) Handles MaskedTextBoxEmail.Validated
+        If confirmarEmail.IsMatch(MaskedTextBoxEmail.Text) Then
+            ErrorTextBox.SetError(MaskedTextBoxEmail, "Introduce un email valido")
+        End If
+    End Sub
+
+    Private Sub MaskedTextBoxEmail_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaskedTextBoxEmail.Validating
+        ErrorTextBox.SetError(MaskedTextBoxEmail, "")
     End Sub
 End Class

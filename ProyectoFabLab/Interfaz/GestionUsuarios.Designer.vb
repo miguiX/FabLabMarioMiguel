@@ -25,12 +25,12 @@ Partial Class GestionUsuarios
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.ButtonNuevoUsuario = New System.Windows.Forms.Button()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonConsultar = New System.Windows.Forms.Button()
         Me.DataUsuarios = New System.Windows.Forms.DataGridView()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.DataUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +73,16 @@ Partial Class GestionUsuarios
         Me.ButtonNuevoUsuario.TabIndex = 2
         Me.ButtonNuevoUsuario.Text = "Nuevo Usuario"
         Me.ButtonNuevoUsuario.UseVisualStyleBackColor = True
+        '
+        'ButtonBuscar
+        '
+        Me.ButtonBuscar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonBuscar.Location = New System.Drawing.Point(3, 3)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(94, 47)
+        Me.ButtonBuscar.TabIndex = 3
+        Me.ButtonBuscar.Text = "Buscar"
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
         'FlowLayoutPanel1
         '
@@ -132,16 +142,6 @@ Partial Class GestionUsuarios
         Me.DataUsuarios.RowTemplate.Height = 24
         Me.DataUsuarios.Size = New System.Drawing.Size(957, 339)
         Me.DataUsuarios.TabIndex = 2
-        '
-        'ButtonBuscar
-        '
-        Me.ButtonBuscar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ButtonBuscar.Location = New System.Drawing.Point(3, 3)
-        Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(94, 47)
-        Me.ButtonBuscar.TabIndex = 3
-        Me.ButtonBuscar.Text = "Buscar"
-        Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
         'GestionUsuarios
         '
